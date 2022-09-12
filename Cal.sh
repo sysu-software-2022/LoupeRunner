@@ -46,6 +46,6 @@ find $FolderName/*.hits_sorted | parallel -j $thread_num "echo Processing {};pyt
 cat $FolderName/*.tsv > $ResultFileName
 end=$(date +%s)
 spend=$(expr $end - $begin)
-
+rm Tmp_*
 echo "Work Done!! Used time: $spend s"
 
