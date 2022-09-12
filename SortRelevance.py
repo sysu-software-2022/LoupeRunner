@@ -1,6 +1,22 @@
 import os
 import subprocess
 import argparse
+import pandas as pd
+import numpy as np
+import sklearn
+from imblearn.over_sampling import SMOTE
+from collections import Counter
+from sklearn.preprocessing import LabelEncoder,OneHotEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.utils import shuffle
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, plot_confusion_matrix
+from sklearn.model_selection import GridSearchCV
+from sklearn import preprocessing
+
+from sklearn.neural_network import MLPClassifier
+from sklearn import svm
+from sklearn.ensemble import RandomForestClassifier,AdaBoostClassifier,BaggingClassifier,\
+                            ExtraTreesClassifier,GradientBoostingClassifier,HistGradientBoostingClassifier
 
 
 # Relevance.tsv
@@ -268,26 +284,6 @@ with open(Relevance_CategoryName,'w') as f:
     f.write("\n")
 
 
-
-
-import pandas as pd
-import numpy as np
-import sklearn
-from imblearn.over_sampling import SMOTE
-from collections import Counter
-from sklearn.preprocessing import LabelEncoder,OneHotEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.utils import shuffle
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score, plot_confusion_matrix
-from sklearn.model_selection import GridSearchCV
-from sklearn import preprocessing
-
-from sklearn.neural_network import MLPClassifier
-from sklearn import svm
-from sklearn.ensemble import RandomForestClassifier,AdaBoostClassifier,BaggingClassifier,\
-                            ExtraTreesClassifier,GradientBoostingClassifier,HistGradientBoostingClassifier
-
-#import seaborn as sns
 
 def visualize(pred_y, test_y):
     '''
