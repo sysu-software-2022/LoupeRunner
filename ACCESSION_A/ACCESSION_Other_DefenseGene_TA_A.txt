@@ -1,0 +1,8 @@
+WP_069582314.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium] |  2
+WP_069582319.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium] |  2
+WP_069582320.1 |  CRISPR-associated protein Cas5 [Methanobacterium] |  2
+WP_069582322.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium] |  2
+WP_069582324.1 |  CRISPR-associated protein Cas4 [Methanobacterium] |  2
+WP_069582327.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium] |  2
+WP_069582332.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium] |  2
+WP_069582310.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium] |  2

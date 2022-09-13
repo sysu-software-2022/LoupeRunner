@@ -1,0 +1,17 @@
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_1.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_10.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_11.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_12.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_13.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_14.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_15.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_16.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_17.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_2.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_3.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_4.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_5.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_6.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_7.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_8.hits_sorted
+./TA_A_OUTPUT/CLUSTERS_TA_A/Sorted//CLUSTER_9.hits_sorted

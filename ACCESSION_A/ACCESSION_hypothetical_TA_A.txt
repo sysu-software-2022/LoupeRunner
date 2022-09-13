@@ -1,0 +1,5 @@
+WP_069582317.1 |  hypothetical protein [Methanobacterium] |  4
+WP_069582299.1 |  hypothetical protein [Methanobacterium bryantii] |  4
+WP_069582302.1 |  hypothetical protein [Methanobacterium] |  4
+WP_069582304.1 |  hypothetical protein [Methanobacterium] |  4
+WP_069582305.1 |  hypothetical protein [Methanobacterium] |  4

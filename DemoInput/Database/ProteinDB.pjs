@@ -1,0 +1,24 @@
+{
+  "version": "1.2",
+  "dbname": "ProteinDB",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "Methanobacterium_1.faa",
+  "number-of-letters": 11107289,
+  "number-of-sequences": 39278,
+  "last-updated": "2022-09-09T21:29:00",
+  "number-of-volumes": 1,
+  "bytes-total": 20200087,
+  "bytes-to-cache": 11460896,
+  "files": [
+    "ProteinDB.pdb",
+    "ProteinDB.phr",
+    "ProteinDB.pin",
+    "ProteinDB.pog",
+    "ProteinDB.pos",
+    "ProteinDB.pot",
+    "ProteinDB.psq",
+    "ProteinDB.ptf",
+    "ProteinDB.pto"
+  ]
+}

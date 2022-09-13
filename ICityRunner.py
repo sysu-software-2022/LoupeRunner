@@ -5,6 +5,7 @@ import shutil
 import os
 import sys
 
+# hint: If you got failure at some steps, you can inspect error message by running relevant CallText in terminal.
 
 def subprocess_call(Stage, CallText):
 
@@ -68,9 +69,10 @@ if not os.path.exists(Dir):
 
 # Run steps here
 
-subprocess_call("Step 4: Extracting CDS", "python CDS_extract.py" +
-                " -p " + config.GbffFile_Path +
-                " -s " + config.GbffFile_Type)
+# You can remove the comment if you need to extract CDS from .gbff file
+# subprocess_call("Step 4: Extracting CDS", "python CDS_extract.py" +
+#                 " -p " + config.GbffFile_Path +
+#                 " -s " + config.GbffFile_Type)
 
 
 subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.ICITY_CONFIG_INPUT["PTYFile"] +

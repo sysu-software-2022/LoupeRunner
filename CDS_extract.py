@@ -5,6 +5,7 @@ ap = argparse.ArgumentParser(description="Extracting seeds from CDS file")
 ap.add_argument("-p", help="Working Path", required=True)
 ap.add_argument("-s", help="Type", required=True)
 opts = ap.parse_args()
+
 # 搜索 gbff 文件，返回 gbff 文件路径
 def GbffContext(path, types):
     file_path  = path + types
