@@ -73,12 +73,12 @@ subprocess_call("Step 4: Extracting CDS", "python CDS_extract.py" +
                 " -s " + config.GbffFile_Type)
 
 
-subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.ICITY_CONFIG_INPUT["CdsPath"] +
+subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.ICITY_CONFIG_INPUT["PTYFile"] +
                 " -s " + config.ICITY_CONFIG_INPUT["SeedPath"] +
                 " -o " + config.ICITY_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"])
 
 
-subprocess_call("Step 6: Selecting neighborhoods", "python FindNeighborhood.py -c " + config.ICITY_CONFIG_INPUT["CdsPath"] +
+subprocess_call("Step 6: Selecting neighborhoods", "python FindNeighborhood.py -c " + config.ICITY_CONFIG_INPUT["PTYFile"] +
                 " -s " + config.ICITY_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
                 " -o " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityFileName"] +
                 " -d " + str(config.ICITY_CONFIG_INPUT["NeighborhoodVicinitySize"]))
