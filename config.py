@@ -1,21 +1,15 @@
-#Default configurations
-
-"""
-Configs for @Icity Runner.
-[Archaea_RM] processing in default, which can be changed by requirements.
-"""
-# Input files and Hyper-parameters
 import os
-DefenseSystem_Name = "RM_A"
-DefenseSystem_FilePath = "/root/ICityRunnerPackage/"  # Your Working Path
-GbffFile_Path = "/mnt/data/archaea"
-GbffFile_Type = "Archaea"
+
+# Hyper-parameters and Input files
+DefenseSystem_Name = "TA_A"
+DefenseSystem_FilePath = os .path.join("./")  # Your Working Path
+GbffFile_Path = "./archaea"
+GbffFile_Type = "TA_A"
 
 ICITY_CONFIG_INPUT = {
-    "PTYFile": "Database/archaea_cds.pty",
-    "PathToDatabase": "Database/ArchaeaProt",
-    "CdsPath": "Database/archaea_cds.pty",
-    "SeedPath": "Archaea_RM.xlsx",
+    "PTYFile": os.path.join("./", "DemoInput/Database/CDS.pty"),
+    "PathToDatabase": os.path.join("./", "DemoInput/Database/ProteinDB"),
+    "SeedPath":os.path.join("./", "DemoInput/Archaea_Cas.csv"),
     "NeighborhoodVicinitySize": 10000,
     "PermissiveClusteringThreshold": 0.3,
     "SortingOverlapThreshold": 0.4,
@@ -40,3 +34,4 @@ ICITY_CONFIG_TEMPORARYFILES = {
     "SeedsExtractedFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Seeds_" + DefenseSystem_Name + ".tsv"),
 
 }
+
