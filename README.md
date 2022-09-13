@@ -144,7 +144,6 @@ GbffFile_Type = "TA_A"
 ICITY_CONFIG_INPUT = {
     "PTYFile": os.path.join("./", "DemoInput/Database/CDS.pty"),
     "PathToDatabase": os.path.join("./", "DemoInput/Database/ProteinDB"),
-    "CdsPath": os.path.join("./", "DemoInput/Database/CDS.pty"),
     "SeedPath":os.path.join("./", "DemoInput/Archaea_Cas.csv"),
     "NeighborhoodVicinitySize": 10000,
     "PermissiveClusteringThreshold": 0.3,
