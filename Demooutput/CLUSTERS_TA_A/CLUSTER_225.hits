@@ -1,0 +1,9 @@
+# PSIBLAST 2.13.0+
+# Iteration: 1
+# Query: ref|WP_156096076.1| hypothetical protein [Methanobacterium sp. SMA-27]
+# Database: ./DemoInput/Database/ProteinDB
+# Fields: query id, subject id, subject length, s. start, s. end, evalue, query seq, subject seq, q. start, q. end, score
+# 2 hits found
+ref|WP_156096076.1|	ref|WP_156096076.1|	51	1	51	1.23e-33	MIKTPTVFVLGAGASIPYGYPSGEKLREEICHELEDPSHPYGLNASKSRIL	MIKTPTVFVLGAGASIPYGYPSGEKLREEICHELEDPSHPYGLNASKSRIL	1	51	270
+ref|WP_156096076.1|	ref|WP_223790158.1|	306	1	36	1.95e-08	MIKTPTVFVLGAGASIPYGYPSGEKLREEICHELED	MFETATVLILGAGASMPYGYPSGEDLRSYIIKNLSN	1	36	113
+# BLAST processed 1 queries

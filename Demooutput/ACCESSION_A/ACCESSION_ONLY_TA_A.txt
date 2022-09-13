@@ -1,0 +1,2 @@
+WP_100906263.1 |  type II toxin-antitoxin system RelE/ParE family toxin [Methanobacterium] |  1
+WP_100906541.1 |  type II toxin-antitoxin system VapC family toxin [Methanobacterium subterraneum] |  1

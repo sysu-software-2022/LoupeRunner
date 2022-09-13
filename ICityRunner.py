@@ -5,7 +5,8 @@ import shutil
 import os
 import sys
 
-# hint: If you got failure at some steps, you can inspect error message by running relevant CallText in terminal.
+# hint 1: If you got failure at some steps, you can inspect error message by running relevant CallText in terminal.
+# hint 2: execute command [htop] to view CPU core usage.
 
 def subprocess_call(Stage, CallText):
 

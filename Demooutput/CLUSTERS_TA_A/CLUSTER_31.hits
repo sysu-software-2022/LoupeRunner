@@ -1,0 +1,8 @@
+# PSIBLAST 2.13.0+
+# Iteration: 1
+# Query: ref|WP_023992111.1| hypothetical protein [Methanobacterium sp. MB1]
+# Database: ./DemoInput/Database/ProteinDB
+# Fields: query id, subject id, subject length, s. start, s. end, evalue, query seq, subject seq, q. start, q. end, score
+# 1 hits found
+ref|WP_023992111.1|	ref|WP_023992111.1|	102	1	102	7.75e-71	MKVKEPKYLCDGKYHKIINFNNSRMFSGIGLELSPLIETQHSYVPVRKDDTGFSRLLNFLKGLFLSFFQLAKIIGSIVLFLEIKVNEVFYVQTTSFSSYSCI	MKVKEPKYLCDGKYHKIINFNNSRMFSGIGLELSPLIETQHSYVPVRKDDTGFSRLLNFLKGLFLSFFQLAKIIGSIVLFLEIKVNEVFYVQTTSFSSYSCI	1	102	524
+# BLAST processed 1 queries

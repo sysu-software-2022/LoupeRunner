@@ -1,5 +1,0 @@
-WP_069582264.1 |  DUF2207 domain-containing protein [Methanobacterium] |  3
-WP_069582265.1 |  Ni-sirohydrochlorin a,c-diamide synthase [Methanobacterium] |  3
-WP_069582268.1 |  oligosaccharide repeat unit polymerase family protein [Methanobacterium] |  3
-WP_069582289.1 |  response regulator [Methanobacterium] |  3
-WP_176720169.1 |  response regulator [Methanobacterium] |  3

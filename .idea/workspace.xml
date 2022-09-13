@@ -2,8 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d32ccac3-6512-484c-ad0f-5e133476de38" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/CDS_extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/CDS_extract.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demooutput/CLUSTER_File_Name.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Demooutput/Relevance_Sorted_TA_A_Category.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACCESSION_A/ACCESSION_HouseKeepingGene_TA_A.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACCESSION_A/ACCESSION_ONLY_TA_A.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACCESSION_A/ACCESSION_Other_DefenseGene_TA_A.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACCESSION_A/ACCESSION_TA_A.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACCESSION_A/ACCESSION_hypothetical_TA_A.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLUSTER_File_Name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoInput/Archaea_Cas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/DemoInput/Archaea_Cas.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ICityRunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/ICityRunner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Relevance_Sorted_TA_A_Category.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_1.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_1.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_10.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_10.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_11.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_11.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_12.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_12.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_13.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_13.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_14.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_14.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_15.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_15.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_16.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_16.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_17.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_17.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_2.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_2.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_3.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_3.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_4.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_4.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_5.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_5.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_6.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_6.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_7.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_7.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_8.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_8.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_9.ali" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/CLUSTER_9.hits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_1.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_1.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_10.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_10.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_11.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_11.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_12.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_12.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_13.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_13.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_14.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_14.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_15.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_15.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_16.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_16.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_17.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_17.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_2.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_2.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_3.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_3.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_4.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_4.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_5.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_5.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_6.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_6.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_7.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_7.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_8.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_8.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_9.hits_sorted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/CLUSTERS_TA_A/Sorted/CLUSTER_9.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/Relevance_TA_A.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/Seeds_TA_A.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/VicinityIDs_TA_A.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/VicinityPermissiveClustsLinear_TA_A.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/Vicinity_TA_A.faa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TA_A_OUTPUT/Vicinity_TA_A.tsv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,14 +148,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663080852293</updated>
-      <workItem from="1663080853637" duration="1410000" />
+      <workItem from="1663080853637" duration="2592000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ICityRunner$ICityRunner.coverage" NAME="ICityRunner Coverage Results" MODIFIED="1663081835087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ICityRunner$ICityRunner.coverage" NAME="ICityRunner Coverage Results" MODIFIED="1663082796120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
