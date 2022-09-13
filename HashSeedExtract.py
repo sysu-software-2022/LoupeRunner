@@ -14,12 +14,12 @@ t2 = 0
 
 # Reading arguments from command line
 ap = argparse.ArgumentParser(description = "Extracting seeds from CDS file")
-ap.add_argument("-s", help = "SeedsFileName, seeds xlsx file", required = True)
+ap.add_argument("-s", help = "SeedsFileName, seeds csv file", required = True)
 ap.add_argument("-c", help = "CDSFileName, cds pty file, containing seed information", required = True)
 ap.add_argument("-o", help = "ResultFileName, output tsv file", required = True)
 opts = ap.parse_args()
 
-seed_path = opts.s  # Archaea_RM.xlsx
+seed_path = opts.s  # Archaea_RM.csv
 cds_path = opts.c  # archaea_cds.pty
 seeds_name = opts.o   # Seeds_RM_A.tsv
 
@@ -58,7 +58,7 @@ def SeedExtract(seed_path, cds_path):
 
     cds_find = cds_find.to_numpy()
 
-    seed_file = pd.read_excel(seed_path)
+    seed_file = pd.read_csv(seed_path)
     seed_assembly_accession = seed_file.assembly_accession.str.replace("GCA", "GCF")
     seed_end = seed_file.end
     seed_find = pd.concat([seed_assembly_accession, seed_end], axis=1)
