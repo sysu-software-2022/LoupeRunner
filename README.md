@@ -146,9 +146,9 @@ from LoupeTool import Loupe
 import os
 Loupe.LoupeRunner(DefenseSystem_Name="Cas",
                     DefenseSystem_FilePath="./",
-                    PTYFile=os.path.join("./", "DemoInput/Database/CDS.pty"),
-                    PathToDatabase=os.path.join("./", "DemoInput/Database/ProteinDB"),
-                    SeedPath=os.path.join("./", "DemoInput/Archaea_Cas.csv"),
+                    PTYFile=os.path.join("./", "Cas_INPUT/Database/CDS.pty"),
+                    PathToDatabase=os.path.join("./", "Cas_INPUT/Database/ProteinDB"),
+                    SeedPath=os.path.join("./", "Cas_INPUT/Archaea_Cas.csv"),
                     NeighborhoodVicinitySize=10000,
                     PermissiveClusteringThreshold=0.3,
                     SortingOverlapThreshold=0.4,

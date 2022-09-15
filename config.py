@@ -6,7 +6,7 @@ DefenseSystem_FilePath = os .path.join("./")  # Your Working Path
 GbffFile_Path = "./archaea"
 GbffFile_Type = "TA_A"
 
-ICITY_CONFIG_INPUT = {
+LOUPE_CONFIG_INPUT = {
     "PTYFile": os.path.join("./", "DemoInput/Database/CDS.pty"),
     "PathToDatabase": os.path.join("./", "DemoInput/Database/ProteinDB"),
     "SeedPath":os.path.join("./", "DemoInput/Archaea_Cas.csv"),
@@ -18,14 +18,14 @@ ICITY_CONFIG_INPUT = {
 }
 
 # Output files
-ICITY_CONFIG_OUTPUT = {
+LOUPE_CONFIG_OUTPUT = {
     "ICITYFileName": os .path.join("./" + DefenseSystem_Name+"_OUTPUT", "Relevance_"+DefenseSystem_Name+".tsv"),
     "VicinityClustersFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityPermissiveClustsLinear_"+DefenseSystem_Name+".tsv"),
     "RelevanceCategoryName": "RelevanceCategory_" + DefenseSystem_Name + ".csv"
 }
 
 # Temporary files
-ICITY_CONFIG_TEMPORARYFILES = {
+LOUPE_CONFIG_TEMPORARYFILES = {
     "VicinityFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Vicinity_"+DefenseSystem_Name+".tsv"),
     "VicinityIDsFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityIDs_"+DefenseSystem_Name+".lst"),
     "VicinityFASTAFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Vicinity_"+DefenseSystem_Name+".faa"),

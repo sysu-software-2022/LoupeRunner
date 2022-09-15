@@ -57,7 +57,7 @@ def CheckDependencies():
 
     return
 
-ap = argparse.ArgumentParser(description = "ICITY pipeline. Provides analysis of protein neighborhoods around " +
+ap = argparse.ArgumentParser(description = "LOUPE pipeline. Provides analysis of protein neighborhoods around " +
                                            "specified seeds (coordinates for list of loci of interest), using " +
                                            "spatial information of ORFs and their protein sequrncrs, to search for " +
                                            "protein families associated to the seeds. Input informstion - config ot input with default?")
@@ -76,51 +76,51 @@ if not os.path.exists(Dir):
 #                 " -s " + config.GbffFile_Type)
 
 
-subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.ICITY_CONFIG_INPUT["PTYFile"] +
-                " -s " + config.ICITY_CONFIG_INPUT["SeedPath"] +
-                " -o " + config.ICITY_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"])
+subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
+                " -s " + config.LOUPE_CONFIG_INPUT["SeedPath"] +
+                " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"])
 
 
-subprocess_call("Step 6: Selecting neighborhoods", "python FindNeighborhood.py -c " + config.ICITY_CONFIG_INPUT["PTYFile"] +
-                " -s " + config.ICITY_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
-                " -o " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityFileName"] +
-                " -d " + str(config.ICITY_CONFIG_INPUT["NeighborhoodVicinitySize"]))
+subprocess_call("Step 6: Selecting neighborhoods", "python FindNeighborhood.py -c " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
+                " -s " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
+                " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] +
+                " -d " + str(config.LOUPE_CONFIG_INPUT["NeighborhoodVicinitySize"]))
 
-subprocess_call("Step 7: Collecting protein IDs", "grep -v \"===\" " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityFileName"] + " | cut -f1 | sort -u > " +
-                config.ICITY_CONFIG_TEMPORARYFILES["VicinityIDsFileName"])
+subprocess_call("Step 7: Collecting protein IDs", "grep -v \"===\" " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] + " | cut -f1 | sort -u > " +
+                config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"])
 
-subprocess_call("Step 8: Fetching protein sequences", "blastdbcmd -db " + config.ICITY_CONFIG_INPUT["PathToDatabase"] +
-                " -entry_batch " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
-                " -long_seqids > " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"])
+subprocess_call("Step 8: Fetching protein sequences", "blastdbcmd -db " + config.LOUPE_CONFIG_INPUT["PathToDatabase"] +
+                " -entry_batch " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
+                " -long_seqids > " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"])
 
-subprocess_call("Step 9: Clustering protein seqiences", "bash RunClust.sh " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"] + " " +
-                str(config.ICITY_CONFIG_INPUT["PermissiveClusteringThreshold"]) + " " +
-                config.ICITY_CONFIG_OUTPUT["VicinityClustersFileName"])
+subprocess_call("Step 9: Clustering protein seqiences", "bash RunClust.sh " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"] + " " +
+                str(config.LOUPE_CONFIG_INPUT["PermissiveClusteringThreshold"]) + " " +
+                config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"])
 
-subprocess_call("Step 10: Making profiles", "python MakeProfiles.py -f " + config.ICITY_CONFIG_OUTPUT["VicinityClustersFileName"] +
-                " -c " + config.ICITY_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
-                " -d " + config.ICITY_CONFIG_INPUT["PathToDatabase"])
+subprocess_call("Step 10: Making profiles", "python MakeProfiles.py -f " + config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"] +
+                " -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
+                " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"])
 
 
-subprocess_call("Step 11: Running PSI-BLAST for profiles", "python RunPSIBLAST.py -c " + config.ICITY_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
-               " -d " + config.ICITY_CONFIG_INPUT["PathToDatabase"] + " -t " + config.ICITY_CONFIG_INPUT["ThreadNum"]
+subprocess_call("Step 11: Running PSI-BLAST for profiles", "python RunPSIBLAST.py -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
+               " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"] + " -t " + config.LOUPE_CONFIG_INPUT["ThreadNum"]
                  )
 
-subprocess_call("Step 12: Sorting blast hits", "python SortBLASTHitsInMemory.py -c " + config.ICITY_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
-                " -o " + config.ICITY_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] +
-                " -p " + config.ICITY_CONFIG_INPUT["PTYFile"] +
-                " -i " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
-                " -s " + config.ICITY_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
-                " -v " + config.ICITY_CONFIG_TEMPORARYFILES["VicinityFileName"] +
-                " -z " + str(config.ICITY_CONFIG_INPUT["SortingOverlapThreshold"]) +
-                " -x " + str(config.ICITY_CONFIG_INPUT["SortingCoverageThresold"]))
+subprocess_call("Step 12: Sorting blast hits", "python SortBLASTHitsInMemory.py -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
+                " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] +
+                " -p " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
+                " -i " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
+                " -s " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
+                " -v " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] +
+                " -z " + str(config.LOUPE_CONFIG_INPUT["SortingOverlapThreshold"]) +
+                " -x " + str(config.LOUPE_CONFIG_INPUT["SortingCoverageThresold"]))
 
-subprocess_call("Step 13: Calculating ICITY metric", "bash Cal.sh " +
-                config.ICITY_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] + " " +
-                config.ICITY_CONFIG_INPUT["PathToDatabase"] + " " +
-                config.ICITY_CONFIG_OUTPUT["VicinityClustersFileName"] + " " +
-                config.ICITY_CONFIG_OUTPUT["ICITYFileName"] + " " +
-                config.ICITY_CONFIG_INPUT["ThreadNum"]
+subprocess_call("Step 13: Calculating LOUPE metric", "bash Cal.sh " +
+                config.LOUPE_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] + " " +
+                config.LOUPE_CONFIG_INPUT["PathToDatabase"] + " " +
+                config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"] + " " +
+                config.LOUPE_CONFIG_OUTPUT["LOUPEFileName"] + " " +
+                config.LOUPE_CONFIG_INPUT["ThreadNum"]
                 )
 
 subprocess_call("Step 14: Sorting Relevance", "python SortRelevance.py -n " + config.DefenseSystem_Name+
