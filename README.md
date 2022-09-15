@@ -1,22 +1,24 @@
-# ICityTool	
+# LoupeTool	
 
-[![PyPI version](https://img.shields.io/badge/pypi-v0.1-yellowgreen?logo=pypi&logoColor=yellow)](https://badge.fury.io/py/ICityTool) [![Python 3.6](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-yellowgreen?style=flat&logo=python&logoColor=yellow&color=blue)](https://badge.fury.io/py/ICityTool)[![Python 3.6](https://img.shields.io/badge/GitHub-repository-yellowgreen?style=flat&logo=github&logoColor=white&color=blue)](https://github.com/sysu-software-2022/ICityTool)
+[![PyPI version](https://img.shields.io/badge/pypi-v0.1-yellowgreen?logo=pypi&logoColor=yellow)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-yellowgreen?style=flat&logo=python&logoColor=yellow&color=blue)](https://badge.fury.io/py/LoupeTool)[![Python 3.6](https://img.shields.io/badge/GitHub-repository-yellowgreen?style=flat&logo=github&logoColor=white&color=blue)](https://github.com/sysu-software-2022/LoupeTool)
 
-**An integrate python package version of ICityRunner**
+**An integrate python package version of LoupeRunner**
+
+
 
 ## 🌟Download
 
 ```python
-pip install ICityTool
+pip install LoupeTool
 ```
 
 
 
 ## 🔌Dependences Installation
 
-The following **5** tools and **2** python packages are significantly critical for your successful execution of ICityTool.
+The following **4** tools and **5** python packages are significantly critical for your successful execution of LoupeTool.
 
-We strongly recommend you run **ICityTool** in **Linux** or **macOS**.
+We strongly recommend you run **LoupeTool** in **Linux** or **macOS**.
 
 
 
@@ -97,9 +99,13 @@ For more details see [Muscle5](https://drive5.com/muscle5/)
 
 
 
+
+
 #### 3.MMseqs2
 
 Please refer to official installation user guide [MMseqs2 User Guide](https://github.com/soedinglab/mmseqs2/wiki#installation)
+
+
 
 
 
@@ -121,59 +127,37 @@ brew install parallel
 
 
 
+
+
 #### 5.Python Packages:
 
-##### bio, pandas, numpy, sklearn
-
-
+##### bio, pandas, numpy, sklearn, imblearn
 
 You can install these python packages by running `pip install -r requirements.txt`
 
 
 
+
+
 ## 👾Quick Example
-> config.py
+
 ```python
-# Input files and Hyper-parameters
+from LoupeTool import Loupe
 import os
-DefenseSystem_Name = "TA_A"
-DefenseSystem_FilePath = os .path.join("./")  # Your Working Path
-GbffFile_Path = "./archaea"
-GbffFile_Type = "TA_A"
-
-ICITY_CONFIG_INPUT = {
-    "PTYFile": os.path.join("./", "DemoInput/Database/CDS.pty"),
-    "PathToDatabase": os.path.join("./", "DemoInput/Database/ProteinDB"),
-    "SeedPath":os.path.join("./", "DemoInput/Archaea_Cas.csv"),
-    "NeighborhoodVicinitySize": 10000,
-    "PermissiveClusteringThreshold": 0.3,
-    "SortingOverlapThreshold": 0.4,
-    "SortingCoverageThresold": 0.25,
-    "ThreadNum": "48"   # Change global thread number here
-}
-
-# Output files
-ICITY_CONFIG_OUTPUT = {
-    "ICITYFileName": os .path.join("./" + DefenseSystem_Name+"_OUTPUT", "Relevance_"+DefenseSystem_Name+".tsv"),
-    "VicinityClustersFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityPermissiveClustsLinear_"+DefenseSystem_Name+".tsv"),
-    "RelevanceCategoryName": "RelevanceCategory_" + DefenseSystem_Name + ".csv"
-}
-
-# Temporary files
-ICITY_CONFIG_TEMPORARYFILES = {
-    "VicinityFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Vicinity_"+DefenseSystem_Name+".tsv"),
-    "VicinityIDsFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityIDs_"+DefenseSystem_Name+".lst"),
-    "VicinityFASTAFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Vicinity_"+DefenseSystem_Name+".faa"),
-    "ProfilesFolder": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "CLUSTERS_"+DefenseSystem_Name + "/"),
-    "SortedBLASTHitsFolder": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "CLUSTERS_"+DefenseSystem_Name, "Sorted/"),
-    "SeedsExtractedFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Seeds_" + DefenseSystem_Name + ".tsv"),
-
-
-}
-
-
+Loupe.LoupeRunner(DefenseSystem_Name="Cas",
+                    DefenseSystem_FilePath="./",
+                    PTYFile=os.path.join("./", "DemoInput/Database/CDS.pty"),
+                    PathToDatabase=os.path.join("./", "DemoInput/Database/ProteinDB"),
+                    SeedPath=os.path.join("./", "DemoInput/Archaea_Cas.csv"),
+                    NeighborhoodVicinitySize=10000,
+                    PermissiveClusteringThreshold=0.3,
+                    SortingOverlapThreshold=0.4,
+                    SortingCoverageThresold=0.25,
+                    ThreadNum="48")
 
 ```
+
+
 
 ##### I. Parameters guide:
 
@@ -188,7 +172,7 @@ hint: the most convinient way of managing these relevant paths is create a new d
 
 ##### II. For users:
 
-For processing large **seeds** by executing **ICityTool,** you may have to wait for longer time, which is contingent on your CPU core number (some bottleneck steps in **ICityTool** are optimized by **parallelization** and the performance is positively correlated with the CPU core number)
+For processing large **seeds** by executing **LoupeTool,** you may have to wait for longer time, which is contingent on your CPU core number (some bottleneck steps in **LoupeTool** are optimized by **parallelization** and the performance is positively correlated with the CPU core number)
 
 
 
