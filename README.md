@@ -1,16 +1,20 @@
-# LoupeTool	
+# LoupeRunner	
 
 [![PyPI version](https://img.shields.io/badge/pypi-v0.1-yellowgreen?logo=pypi&logoColor=yellow)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-yellowgreen?style=flat&logo=python&logoColor=yellow&color=blue)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/GitHub-repository-yellowgreen?style=flat&logo=github&logoColor=white&color=blue)](https://github.com/sysu-software-2022/LoupeTool)
 
 **An integrate python package version of LoupeRunner**
 
+You can run **LoupeRunner** step by step with your customized parameters.
 
+ 
 
-## 🌟Download
+## 🌟Or download the python package
 
 ```python
 pip install LoupeTool
 ```
+
+For details see [LoupeTool](https://github.com/sysu-software-2022/LoupeTool)
 
 
 
@@ -141,6 +145,8 @@ You can install these python packages by running `pip install -r requirements.tx
 
 ## 👾Quick Example
 
+**! Make sure you have already downloaded all dependencies**
+
 ```python
 from LoupeTool import Loupe
 import os
@@ -161,12 +167,16 @@ Loupe.LoupeRunner(DefenseSystem_Name="Cas",
 
 ##### I. Parameters guide:
 
-1. DefenseSystem_Name: ABI, RM, TA, DND, Cas.
-2. DefenseSystem_FilePath: Your working directory.
-3. SeedPath: your seed **csv** file path
-4. ThreadNum: thread number should be contingent on your **CPU core number**.
+1. DefenseSystem_Name: ABI, RM, TA, DND, Cas;
+2. DefenseSystem_FilePath: Your working directory;
+3. PTYFile: your **.pty** file path;
+4. SeedPath: your seed **.csv** file path;
+5. NeighborhoodVicinitySize: change the bidirectional search domain of seed, if this increase, the search domain will be expand correspondingly. Our Suggestion Value: CRISPR-Cas: 10000，TA: 2000
+6. PermissiveClusteringThreshold: this adjust mmseqs cluster parameter(i.e. --min-seq-id) in **step 9**, this will affect sequence similarity. For more details, see:  [MMseqs2 User Guide](https://github.com/soedinglab/mmseqs2/wiki)
+7. SortingOverlapThreshold and SortingCoverageThresold: this twos parameters are used to filter **Low matching hit** produced by **PSIBLAST **in **step12**, increase them will result in the spurt of specificity.
+8. ThreadNum: thread number should be contingent on your **CPU core number**.
 
-hint: the most convinient way of managing these relevant paths is create a new directory for processing your data or use exsiting one and include all your files in this directory.
+hint: the most convenient way of managing these relevant paths is create a new directory for processing your data or use existing one and include all your files in this directory.
 
 
 
