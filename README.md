@@ -173,7 +173,7 @@ Loupe.LoupeRunner(DefenseSystem_Name="Cas",
 4. SeedPath: your seed **.csv** file path;
 5. NeighborhoodVicinitySize: change the bidirectional search domain of seed, if this increase, the search domain will be expand correspondingly. Our Suggestion Value: CRISPR-Cas: 10000，TA: 2000
 6. PermissiveClusteringThreshold: this adjust mmseqs cluster parameter(i.e. --min-seq-id) in **step 9**, this will affect sequence similarity. For more details, see:  [MMseqs2 User Guide](https://github.com/soedinglab/mmseqs2/wiki)
-7. SortingOverlapThreshold and SortingCoverageThresold: this twos parameters are used to filter **Low matching hit** produced by **PSIBLAST **in **step12**, increase them will result in the spurt of specificity.
+7. SortingOverlapThreshold and SortingCoverageThresold: this twos parameters are used to filter **Low matching hit** produced by **PSIBLAST ** in **step12**, increase them will result in the spurt of specificity.
 8. ThreadNum: thread number should be contingent on your **CPU core number**.
 
 hint: the most convenient way of managing these relevant paths is create a new directory for processing your data or use existing one and include all your files in this directory.
