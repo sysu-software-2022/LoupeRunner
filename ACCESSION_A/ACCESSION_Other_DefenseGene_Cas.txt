@@ -1,0 +1,3 @@
+WP_100906541.1 |  type II toxin-antitoxin system VapC family toxin [Methanobacterium subterraneum] |  2
+WP_100906263.1 |  type II toxin-antitoxin system RelE/ParE family toxin [Methanobacterium] |  2
+WP_095652011.1 |  Eco57I restriction-modification methylase domain-containing protein [Methanobacterium bryantii] |  2

@@ -1,0 +1,75 @@
+WP_100907665.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium sp. MZ-A1] |  1
+WP_071906997.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium congolense] |  1
+WP_013825932.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium paludis] |  1
+WP_004031775.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium formicicum] |  1
+WP_048082041.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium] |  1
+WP_048188005.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium paludis] |  1
+WP_004031768.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium formicicum] |  1
+WP_071906986.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium congolense] |  1
+WP_100906537.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium subterraneum] |  1
+WP_100907667.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium sp. MZ-A1] |  1
+WP_039377070.1 |  type I-B CRISPR-associated endonuclease Cas1 [Methanobacterium sp. MB1] |  1
+WP_069582327.1 |  type I-B CRISPR-associated endonuclease Cas1b [Methanobacterium] |  1
+WP_013825929.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium paludis] |  1
+WP_048082035.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium] |  1
+WP_236951113.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium subterraneum] |  1
+WP_023991516.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium sp. MB1] |  1
+WP_237739745.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium formicicum] |  1
+WP_157809477.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium sp. MZ-A1] |  1
+WP_069582314.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium] |  1
+WP_071906994.1 |  CRISPR-associated endoribonuclease Cas6 [Methanobacterium congolense] |  1
+WP_023991508.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium sp. MB1] |  1
+WP_071906985.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium congolense] |  1
+WP_013825926.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium paludis] |  1
+WP_100906536.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium subterraneum] |  1
+WP_048082042.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium] |  1
+WP_100907668.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium sp. MZ-A1] |  1
+WP_004031767.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium formicicum] |  1
+WP_069582332.1 |  CRISPR-associated endonuclease Cas2 [Methanobacterium] |  1
+WP_013825930.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium paludis] |  1
+WP_071906995.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium congolense] |  1
+WP_004031772.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium formicicum] |  1
+WP_231916359.1 |  CRISPR-associated protein Cas4 [Methanobacterium congolense] |  1
+WP_048188106.1 |  CRISPR-associated protein Cas4 [Methanobacterium paludis] |  1
+WP_048191724.1 |  CRISPR-associated protein Cas4 [Methanobacterium sp. SMA-27] |  1
+WP_048082037.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium] |  1
+WP_100906546.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium subterraneum] |  1
+WP_069582319.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium] |  1
+WP_023991514.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium sp. MB1] |  1
+WP_048191534.1 |  CRISPR-associated protein Cas4 [Methanobacterium sp. SMA-27] |  1
+WP_071906990.1 |  CRISPR-associated endonuclease Cas3'' [Methanobacterium congolense] |  1
+WP_071906991.1 |  type I-B CRISPR-associated protein Cas5b [Methanobacterium congolense] |  1
+WP_071908025.1 |  CRISPR-associated protein Cas4 [Methanobacterium congolense] |  1
+WP_048082040.1 |  CRISPR-associated protein Cas4 [Methanobacterium] |  1
+WP_004031769.1 |  CRISPR-associated protein Cas4 [Methanobacterium formicicum] |  1
+WP_069582324.1 |  CRISPR-associated protein Cas4 [Methanobacterium] |  1
+WP_100906540.1 |  CRISPR-associated protein Cas4 [Methanobacterium subterraneum] |  1
+WP_100907666.1 |  CRISPR-associated protein Cas4 [Methanobacterium sp. MZ-A1] |  1
+WP_048188364.1 |  CRISPR-associated protein Cas4 [Methanobacterium paludis] |  1
+WP_023991510.1 |  CRISPR-associated protein Cas4 [Methanobacterium sp. MB1] |  1
+WP_071906992.1 |  type I-B CRISPR-associated protein Cas7/Csh2 [Methanobacterium congolense] |  1
+WP_071906993.1 |  TIGR02556 family CRISPR-associated protein [Methanobacterium congolense] |  1
+WP_100907663.1 |  type I-B CRISPR-associated protein Cas7/Cst2/DevR [Methanobacterium sp. MZ-A1] |  1
+WP_013825931.1 |  type I-B CRISPR-associated protein Cas5b [Methanobacterium paludis] |  1
+WP_071906996.1 |  type I-B CRISPR-associated protein Cas5b [Methanobacterium congolense] |  1
+WP_004031773.1 |  type I-B CRISPR-associated protein Cas5b [Methanobacterium formicicum] |  1
+WP_071906998.1 |  type I-B CRISPR-associated protein Cas8b1/Cst1 [Methanobacterium congolense] |  1
+WP_004031777.1 |  type I-B CRISPR-associated protein Cas8b1/Cst1 [Methanobacterium formicicum] |  1
+WP_013825933.1 |  type I-B CRISPR-associated protein Cas8b1/Cst1 [Methanobacterium paludis] |  1
+WP_013826012.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium paludis] |  1
+WP_179288733.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium bryantii] |  1
+WP_071907099.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium congolense] |  1
+WP_100906254.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium] |  1
+WP_069582310.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium] |  1
+WP_023992118.1 |  CRISPR locus-related DNA-binding protein [Methanobacterium sp. MB1] |  1
+WP_013644348.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium lacus] |  1
+WP_048082034.1 |  CRISPR-associated CARF protein Csa3 [Methanobacterium] |  1
+WP_048082039.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium] |  1
+WP_100906543.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium subterraneum] |  1
+WP_069582322.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium] |  1
+WP_023991511.1 |  CRISPR-associated helicase/endonuclease Cas3 [Methanobacterium sp. MB1] |  1
+WP_100906545.1 |  CRISPR-associated protein Cas5 [Methanobacterium subterraneum] |  1
+WP_069582320.1 |  CRISPR-associated protein Cas5 [Methanobacterium] |  1
+WP_100907664.1 |  CRISPR-associated protein Cas5 [Methanobacterium sp. MZ-A1] |  1
+WP_048082038.1 |  CRISPR-associated protein Cas5 [Methanobacterium] |  1
+WP_023991513.1 |  CRISPR-associated protein Cas5 [Methanobacterium sp. MB1] |  1
