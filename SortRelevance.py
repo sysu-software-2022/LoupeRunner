@@ -44,6 +44,7 @@ class NotDefenseSystem(Exception): pass
 ap = argparse.ArgumentParser(description = "SortRelevance")
 ap.add_argument("-n", help = "DefenseSystemName", required = True)
 ap.add_argument("-p", help = "DefenseSystemFilePath", required = True)
+ap.add_argument("-d", help = "Database Path", required = True)
 
 opts = ap.parse_args()
 
@@ -51,13 +52,15 @@ opts = ap.parse_args()
 # 修改文件位置
 DefenseSystem_Name = opts.n
 DefenseSystem_FilePath = opts.p
+PathToDatabase = opts.d
+
 
 SeedAccession_Filename = DefenseSystem_FilePath+ DefenseSystem_Name + '_OUTPUT/Seeds_' + DefenseSystem_Name + '.tsv'
 CLUSTERS_Filepath = DefenseSystem_FilePath + DefenseSystem_Name + '_OUTPUT/CLUSTERS_' + DefenseSystem_Name 
 CLUSTERHitsSorted_path = DefenseSystem_FilePath + DefenseSystem_Name + '_OUTPUT/CLUSTERS_' + DefenseSystem_Name + '/Sorted/'
 Vicinity_Filename=(os.path.split(DefenseSystem_FilePath+ DefenseSystem_Name + '_OUTPUT/Vicinity_'+ DefenseSystem_Name + '.faa')[1])
 Relevance_Filenpath = DefenseSystem_FilePath+DefenseSystem_Name + '_OUTPUT/Relevance_' + DefenseSystem_Name + '.tsv'
-Relevance_CategoryName = 'Relevance_Sorted_'+ DefenseSystem_Name + '_Category.csv'
+Relevance_CategoryName = DefenseSystem_FilePath+DefenseSystem_Name + '_OUTPUT/Relevance_Sorted_'+ DefenseSystem_Name + '_Category.csv'
 CLUSTERS_Filenpath = DefenseSystem_FilePath + DefenseSystem_Name + '_OUTPUT/CLUSTERS_' + DefenseSystem_Name 
 
 
@@ -373,13 +376,13 @@ def binary_cls_analysis(filename, outname):
     
 if __name__ == '__main__':
     filename = Relevance_CategoryName
-    outname = f"output_{filename}"
+    outname = DefenseSystem_FilePath+DefenseSystem_Name + '_OUTPUT/output_Relevance_Sorted_'+ DefenseSystem_Name + '_Category.csv'
     binary_cls_analysis(filename, outname)
 
 
 
 NewGene_ClusterIDs = pd.read_csv(outname)
-NewGeneFile = 'NewGene_' + DefenseSystem_Name
+NewGeneFile = DefenseSystem_FilePath + DefenseSystem_Name + '_OUTPUT/NewGene_' + DefenseSystem_Name
 
 
 if not os.path.exists(NewGeneFile):
@@ -393,8 +396,9 @@ for n in NewGene_ClusterIDs["A"]:
             f.write(Relevance_Sorted_Target['CLUSTER_' + n][1][i])
             f.write('\n')
 
-    subprocess.call('blastdbcmd -db Database/ProteinDB -entry_batch '+ NewGeneList +
-    ' -long_seqids > '+ NewGeneFile + '/' + DefenseSystem_Name + '_' +'CLUSTER_'+ n +'.faa',shell= True)
+    subprocess.call('blastdbcmd -db ' + PathToDatabase + ' -entry_batch ' + NewGeneList +
+                    ' -long_seqids > ' + NewGeneFile + '/' + DefenseSystem_Name + '_' + 'CLUSTER_' + n + '.faa',
+                    shell=True)
 
 
 

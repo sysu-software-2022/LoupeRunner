@@ -1,15 +1,15 @@
 import os
 
 # Hyper-parameters and Input files
-DefenseSystem_Name = "TA_A"
+DefenseSystem_Name = "Cas"
 DefenseSystem_FilePath = os .path.join("./")  # Your Working Path
 GbffFile_Path = "./archaea"
-GbffFile_Type = "TA_A"
+GbffFile_Type = "Cas"
 
 LOUPE_CONFIG_INPUT = {
-    "PTYFile": os.path.join("./", "DemoInput/Database/CDS.pty"),
-    "PathToDatabase": os.path.join("./", "DemoInput/Database/ProteinDB"),
-    "SeedPath":os.path.join("./", "DemoInput/Archaea_Cas.csv"),
+    "PTYFile": os.path.join("./", "Cas_INPUT/Database/CDS.pty"),
+    "PathToDatabase": os.path.join("./", "Cas_INPUT/Database/ProteinDB"),
+    "SeedPath":os.path.join("./", "Cas_INPUT/Archaea_Cas.csv"),
     "NeighborhoodVicinitySize": 10000,
     "PermissiveClusteringThreshold": 0.3,
     "SortingOverlapThreshold": 0.4,

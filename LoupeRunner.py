@@ -124,5 +124,5 @@ subprocess_call("Step 13: Calculating LOUPE metric", "bash Cal.sh " +
                 )
 
 subprocess_call("Step 14: Sorting Relevance", "python SortRelevance.py -n " + config.DefenseSystem_Name+
-                " -p " + config.DefenseSystem_FilePath
+                " -p " + config.DefenseSystem_FilePath + " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"]
                 )
