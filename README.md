@@ -196,7 +196,7 @@ For processing large **seeds** by executing **LoupeTool,** you may have to wait 
 
 > e.g. 48 CPU cores usage in high performance computing platform when processing bulk data during paralleled period.
 
-![image-20220921124425291](https://lecture11-1301936037.cos.ap-guangzhou.myqcloud.com/202209211244727.png)
+![image-20220921131936389](https://lecture11-1301936037.cos.ap-guangzhou.myqcloud.com/202209211319488.png)
 
  You can download **htop** to monitor **LoupeRunner** processing real-time situation just like the above.
 
