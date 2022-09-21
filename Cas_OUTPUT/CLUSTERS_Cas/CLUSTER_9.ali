@@ -1,24 +1,91 @@
->ref|WP_013826022.1| hypothetical protein [Methanobacterium paludis]
-MINLLVTVFGGLLLIGGFYGMSRGFLTPPNLLLFFLGLCSSVFGLLLMGLFGSKINFSRPEKTPQMGKKALKTPKMAPKE
-AVKKDKLETISKTIKKTAEEKEKP-VKPRPKVKKAEPIPTKGKPIPKIKPVKSKKAPKNTKEEEESKKLAPVEPGKPMRK
-ITPKPSP----EPSTK-KPEKKHEEELEEKPEEISLKKIPSTQKISDVP--SETPRVSDVPNETPSKGHKS--IFKRFHR
-IKPEAKVKKDLPKKDLPKKDLPKKELPKKDL--KSEKKED-PKPRPKHVDLKTLQS---RSDDELDDQFVKNRLERLKSN
-YVENAKEIENIIDERLDSFKGTLDKLKVESQEPNIIWSFDAGDVKDTLNDTISKASNTVLMMYPWVRNIDVGVLKKFMDT
-DSRMIIQEASLDDDTSVELIKLLMDNNVKIRTMPNVHTVAVVSDDTNGLIISTDPIYESFEVGVVYKDHKSIEEIRRLFE
-DAWSISKDINLEIKQ
->ref|WP_071907108.1| hypothetical protein [Methanobacterium congolense]
-MINLLVTVFGGLLAVGGLYLMYLGFATPPSFLFFFAGLCCFVLGFLIVIMFASRVNLSKPKKQATPRKAPVKKPEKLFKD
-QDKKVVLEEITKNIKTESPKKPSP-VKPKPAVKP---I-TADKPAAKAKPDVK---PKAADKPEVKPKPAVRKPIKPAKK
-AKPEERADPSNQPYMKRAAEASKTKEAMEKTGDPAFKPVKHAKKDTEVPGPVPVKKSSEAPKTEVGKIKPVPKM----DK
-VKPTPKPQVK------------PKSVVKPQV--KSVPAKN-LKPHKSRI-----HR---SKKEEEDDEFVKNRLNRLKQN
-YIQNAKDLESLIDERLDSFKGTLDQLKSESQEPSIIWSFDASDVQDALKETISKSEKRILMMYPWVRNIDVSVLKKFMDT
-ESRMIIQEASLDDETSVELIKLLLDNDVSIRTMPHVHTVAVVSDESNGLIISTDPIYESFEVGVVYKDQKSIEEIERLFE
-DAWSISKNINLEKKQ
->ref|WP_013644337.1| hypothetical protein [Methanobacterium lacus]
-MINLLVTIFGGLLLIAGFFGMSFGFATPPDFGLFIVGLISSVFGIILMIFFSGRINLSSKSKKPK--KLPKQTVKP-VMT
-KEKKGPIERIEKSIKPPAKSKTTPKIKPKPSPEV---S-KASK-ASKA---------------------SPERPEKQLKK
-IEPIVS-----RPVPK-KVNTSEEKEILEKTTKPP-----ELSGQTKKP--VTVARGLEIQNKEPSKVKPTPKPVTSQPR
-IVPTPVNKKQPEKTEDNKKSSPVKPVLLKETTNNSETVEDKPKPVPKHVDVSKLNLKTKPASDREDQEFVKNRLNRLKEN
-YIKNAKDIESIIDERLDSFKGTLDTLKSESQEPSIIWSFDAGDVQDALKDTISKANEKVLIMYPWIRNIDVAILKKFMET
-DSRMIIQEASLDDDTSVELIKLLEENEVKIRTMPHIHTVAVVSDNTNGLIISTDPIYESFEVGVMYKDQKSIEEIERLFE
-DAWSISKDLDMELKQ
+>ref|WP_095651997.1| hypothetical protein [Methanobacterium bryantii]
+M--E-------------------------------------------------------KTVKI-LIIVCIILV--VGIG
+V----------------------TTGMLIEKNSK-----------------------------------------V----
+--P--NVSNDS------------------------------------TGNHS--V------QNTSH--------------
+------------------------M---QVNTT--QSTSESKSIKTKSIY-ADSAKVYSKA-EAW------VKRNY---P
+EGYT-VSYPV----LG---------------------DLAA-INNTYYS-YYMEIDDDN---GNYV-RTLKASAYSGELF
+P
+>ref|WP_179288731.1| zinc ribbon domain-containing protein [Methanobacterium bryantii]
+M--TK-ECSNCGAQVAENVKFCTECGGKMEQ--------EALKCPS-CS---AE--------------------LPEGTK
+FCMECGTKVGAEPRAKPKIETAP--KEA------------------------------------------------VCPK
+CRK---------------------------------------------------K------FPAGT--------------
+-----------------------KFCKECGT--P-IKPQ-----------------VSGKK--K-------PEDEV----
+DKIL-KEA---------------------------------------------TTAGKGLLKEADS---------LLKRF
+R
+>ref|WP_023992734.1| zinc ribbon domain-containing protein [Methanobacterium sp. MB1]
+M--G---LLTTKEKTPEEKRISELMSRPIDS--------S----------------------------------------
+---------------------------------------------------------------------------I----
+--K--GPLKQS------------------------------------LKKMA--Q------DGNSI--------------
+-----------------------EEIDAFYKETV-AKVQ-----------------FIEKRREEYIREAKLADKVYKAYI
+TDGVSRLEKVNGRFLASQSIKTDILIEQNNRIIELLELLLNKGTGNSPVAFC-PKCG-----NQNISKEAEFCAECGSKL
+N
+>ref|WP_013826664.1| zinc ribbon domain-containing protein [Methanobacterium paludis]
+M--K---CLKCGHENDVDTQYCEKCGSDLKR--------GVSRLEN-SS---NDG--LKLSSPV-FIVAFVILV--AGLG
+LVL--------------------TSGTLLQMNTGAAAAN--IPTVY--AQSSE--------------I-VTNQPTW----
+--H--QIATYTEPDRG-------------------------------VMNFN--I------QGQKF--------------
+-----------------------KV----------VMSA-----------------TPPLD--N-------QLNIL---N
+VDLL-KDNSA----LTNGLISWNPTE---SITTKERTIEAFTGPGNYQVNIYVTKLK-----NWKV---------TVYDY
+Y
+>ref|WP_232727999.1| hypothetical protein [Methanobacterium sp. MZ-A1]
+M--TNLRCPKCGVEYPENSDRCQFCGNPKNPFPVNDRKKGQKVNSS-ELKHEPETNKSHFVAKL-LGFIGIIFF--IPLT
+L----------------------ASGIYLLTR------------------------------------------------
+------------------------------------------------GEKK--A------KYWGI--------------
+-----------------------AYIIIGVIFWA-IGAY-----------------L-----------------------
+VYTM-GYDKV----LA----------------------------------TYNLTNY-S---YNFT---------NYGLK
+F
+>ref|WP_013825921.1| zinc-ribbon domain-containing protein [Methanobacterium paludis]
+M--K---CSECGMENPDSAEFCQECGEKLNN--------RKNISKEV---------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-----------------------------------------------------------------------------VGL
+N
+>ref|WP_095651994.1| hypothetical protein [Methanobacterium bryantii]
+M--D-------------------------------------------------------RTVKI-LIIICIFLV--AGIG
+L----------------------TTGMLIEKN-------------------------------------------W----
+--A--NTPNNS------------------------------------IGNQS--I------QNTSN--------------
+------------------------TIDKQSNTTV-QNHTKNQAHNGEKLFKGQYYTIINKE-LKY------VGESW---P
+ICPF-CGSKD----TG---------------------DVGTKTEGSYWY-YFFHCNACG---KNFV---------SYAKS
+S
+>ref|WP_100906252.1| hypothetical protein [Methanobacterium]
+MLNK-----------------------------------------------------KEIGLLV-LFVCMVIAV--SGCM
+S----------------------SSVKLV----------------------------------------VNYQGSW----
+--N--GTITDS------------------------------------SGTRT--I------DGTGD--------------
+-----------------------KTIDLGNIIGS-VKVQ-----------------VQKKD--T-------SSDTL---T
+ASLM-RDDKN----VT----------------------------------SLSTFAPNG---DVTL---------SVHFT
+A
+>ref|WP_023992122.1| hypothetical protein [Methanobacterium sp. MB1]
+M--LK-K-----------------------------------------------------LELV-LLVVFVCMV--VAVS
+GCMS-------------------STVKVA----------------------------------------IDYPGSW----
+--N--GTLKTD------------------------------------EGTRS--I------EGTGN--------------
+-----------------------QTIDLGSITGS-LYVK-----------------VEKKD--RG------SNDTI---K
+LSAI-KGDKI----VS----------------------------------TMNSSTKHGELDDAIL---------SIHLT
+P
+>ref|WP_095651996.1| zinc-ribbon domain-containing protein [Methanobacterium bryantii]
+M--Y---CPKCGSNNDADAKYCEKCGTLIKK--------NTKTGEE-H---------TNPSVKY-LIVICVILV--AGLG
+I----------------------AAGYVFYNNSGTSNSSQVQNNVISE--STG--------------FPLSETPNL----
+----A-AEIY-NSGETIATVQYKGITLDKNQCLYILSKAIVMLNQGKSGNIS--I------EKFGD--------------
+-----------------------AS-DPGGVLNSAFITK-----------------FEYVD--M-------AGRTYKWMD
+ANGQ-APNHTGIDFSGSPDLSPDVTLKAFAK-------------------VLTEYKDT-----GKL---------PASVS
+V
+>ref|WP_023992735.1| zinc ribbon domain-containing protein [Methanobacterium sp. MB1]
+M--TK-ICPKCNKKNADTAKFCQDCGEELPE--------ATSKPSK-TVGIGAWWNKQGNGAKIGI-IAGICCI--GLIA
+IVA--------------------LAGMASPDKTT----TSTSPTANTTSTNNDTASNSLSSSAEGIQIVVDYSGNW----
+--Q--GSYGDE------------------------------------TGQQS--V------QGSGK--------------
+-----------------------KTISVSGNPSI-VSAV-----------------MQKMD--G-------GSETL---T
+VKIL-KDGSV----KQ----------------------------------SKSTSADYG---VVTV---------S-YSS
+F
+>ref|WP_095651998.1| zinc ribbon domain-containing protein [Methanobacterium bryantii]
+M--F---CPKCGTDNDDDAKYCEGCGRSLQK--------GIHEQNM-QSKQKNENSGMSNGVKV-LIVICVVLV--AGIG
+L----------------------TVGMLLQNPANSAANNSKQDQVVTTTQSPD--------------T-QTYQPTW----
+--H--KVAVYTGPGED-------------------------------YGSFT--I------KGNQF--------------
+-----------------------KV----------TMSA-----------------VPAIT--Y-------TTNYL---D
+VYVY-DGNTIGINTVGSGTLSWSETE---NPDKKEDSILVSHGSGVYTLDILPTDID-----NYAV---------TVWDY
+Y
+>ref|WP_100906253.1| zinc-ribbon domain-containing protein [Methanobacterium]
+M--Y---CPKCGTKNQDGAVFCETCGSRLTE--------TKTTKSA------PDKKKSSSLPII-LIIIGVVII--VGIG
+I----------------------AAYALYFMPQSNSSTPSITPQVETTAYSND-------------DFSLNYPKTW----
+--TINNSQSDS------------------------------------TGSAVYIIDPQFAADPNGLKVTGVGLFALSKSE
+GVNQDSIVDDLTNTLTNQVTTQKSTVTVDGVSAT-LNIVEGDN---AQGHKSQ-YKIINWE--KG------DMMYI---I
+ACVV-RGSDL----GN----------------------------------TLDSQKANL---DTII---------NSFKS
+K

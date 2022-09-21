@@ -14,7 +14,7 @@ LOUPE_CONFIG_INPUT = {
     "PermissiveClusteringThreshold": 0.3,
     "SortingOverlapThreshold": 0.4,
     "SortingCoverageThresold": 0.25,
-    "ThreadNum": "48"   # Change global thread number here
+    "ThreadNum": str(os.cpu_count())  # Change global thread number here
 }
 
 # Output files
