@@ -19,7 +19,7 @@ LOUPE_CONFIG_INPUT = {
 
 # Output files
 LOUPE_CONFIG_OUTPUT = {
-    "ICITYFileName": os .path.join("./" + DefenseSystem_Name+"_OUTPUT", "Relevance_"+DefenseSystem_Name+".tsv"),
+    "LOUPEFileName": os .path.join("./" + DefenseSystem_Name+"_OUTPUT", "Relevance_"+DefenseSystem_Name+".tsv"),
     "VicinityClustersFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityPermissiveClustsLinear_"+DefenseSystem_Name+".tsv"),
     "RelevanceCategoryName": "RelevanceCategory_" + DefenseSystem_Name + ".csv"
 }

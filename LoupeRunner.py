@@ -76,44 +76,44 @@ if not os.path.exists(Dir):
 #                 " -s " + config.GbffFile_Type)
 
 
-subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
-                " -s " + config.LOUPE_CONFIG_INPUT["SeedPath"] +
-                " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"])
+# subprocess_call("Step 5: Extracting seeds", "python HashSeedExtract.py -c " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
+#                 " -s " + config.LOUPE_CONFIG_INPUT["SeedPath"] +
+#                 " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"])
 
 
-subprocess_call("Step 6: Selecting neighborhoods", "python FindNeighborhood.py -c " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
-                " -s " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
-                " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] +
-                " -d " + str(config.LOUPE_CONFIG_INPUT["NeighborhoodVicinitySize"]))
+# subprocess_call("Step 6: Selecting neighborhoods", "python FindNeighborhood.py -c " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
+#                 " -s " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
+#                 " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] +
+#                 " -d " + str(config.LOUPE_CONFIG_INPUT["NeighborhoodVicinitySize"]))
 
-subprocess_call("Step 7: Collecting protein IDs", "grep -v \"===\" " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] + " | cut -f1 | sort -u > " +
-                config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"])
+# subprocess_call("Step 7: Collecting protein IDs", "grep -v \"===\" " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] + " | cut -f1 | sort -u > " +
+#                 config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"])
 
-subprocess_call("Step 8: Fetching protein sequences", "blastdbcmd -db " + config.LOUPE_CONFIG_INPUT["PathToDatabase"] +
-                " -entry_batch " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
-                " -long_seqids > " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"])
+# subprocess_call("Step 8: Fetching protein sequences", "blastdbcmd -db " + config.LOUPE_CONFIG_INPUT["PathToDatabase"] +
+#                 " -entry_batch " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
+#                 " -long_seqids > " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"])
 
-subprocess_call("Step 9: Clustering protein seqiences", "bash RunClust.sh " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"] + " " +
-                str(config.LOUPE_CONFIG_INPUT["PermissiveClusteringThreshold"]) + " " +
-                config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"])
+# subprocess_call("Step 9: Clustering protein seqiences", "bash RunClust.sh " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFASTAFileName"] + " " +
+#                 str(config.LOUPE_CONFIG_INPUT["PermissiveClusteringThreshold"]) + " " +
+#                 config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"])
 
-subprocess_call("Step 10: Making profiles", "python MakeProfiles.py -f " + config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"] +
-                " -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
-                " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"])
+# subprocess_call("Step 10: Making profiles", "python MakeProfiles.py -f " + config.LOUPE_CONFIG_OUTPUT["VicinityClustersFileName"] +
+#                 " -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
+#                 " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"])
 
 
-subprocess_call("Step 11: Running PSI-BLAST for profiles", "python RunPSIBLAST.py -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
-               " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"] + " -t " + config.LOUPE_CONFIG_INPUT["ThreadNum"]
-                 )
+# subprocess_call("Step 11: Running PSI-BLAST for profiles", "python RunPSIBLAST.py -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
+#                " -d " + config.LOUPE_CONFIG_INPUT["PathToDatabase"] + " -t " + config.LOUPE_CONFIG_INPUT["ThreadNum"]
+#                  )
 
-subprocess_call("Step 12: Sorting blast hits", "python SortBLASTHitsInMemory.py -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
-                " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] +
-                " -p " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
-                " -i " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
-                " -s " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
-                " -v " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] +
-                " -z " + str(config.LOUPE_CONFIG_INPUT["SortingOverlapThreshold"]) +
-                " -x " + str(config.LOUPE_CONFIG_INPUT["SortingCoverageThresold"]))
+# subprocess_call("Step 12: Sorting blast hits", "python SortBLASTHitsInMemory.py -c " + config.LOUPE_CONFIG_TEMPORARYFILES["ProfilesFolder"] +
+#                 " -o " + config.LOUPE_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] +
+#                 " -p " + config.LOUPE_CONFIG_INPUT["PTYFile"] +
+#                 " -i " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityIDsFileName"] +
+#                 " -s " + config.LOUPE_CONFIG_TEMPORARYFILES["SeedsExtractedFileName"] +
+#                 " -v " + config.LOUPE_CONFIG_TEMPORARYFILES["VicinityFileName"] +
+#                 " -z " + str(config.LOUPE_CONFIG_INPUT["SortingOverlapThreshold"]) +
+#                 " -x " + str(config.LOUPE_CONFIG_INPUT["SortingCoverageThresold"]))
 
 subprocess_call("Step 13: Calculating LOUPE metric", "bash Cal.sh " +
                 config.LOUPE_CONFIG_TEMPORARYFILES["SortedBLASTHitsFolder"] + " " +
