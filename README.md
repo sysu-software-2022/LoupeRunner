@@ -244,13 +244,13 @@ Our example show in the table below:
 
 > Archaea_Cas.csv (partial)
 
-| assembly_accession | locus_tag      | product_accession | contigID | start   | end     |
+| Assembly_accession | Locus_tag      | Product_accession | ContigID | Start   | End     |
 | ------------------ | -------------- | ----------------- | -------- | ------- | ------- |
-| GCA_000230715.3    | Natgr_1399     | AFZ72610.1        |          | 1390703 | 1391386 |
-| GCA_000970265.1    | MSLAZ_2290     | AKB75551.1        |          | 2975643 | 2978066 |
-| GCA_900079115.1    | SSOP1_1525     | SAI85079.1        |          | 1340732 | 1341376 |
-| GCA_000189935.2    | AABMKBHA_00165 | AABMKBHA_00165    |          | 33470   | 34630   |
-| GCA_000979385.1    | EO92_18095     | KKG11218.1        |          | 53457   | 54251   |
+| GCA_000230715.3    | Natgr_1399     | AFZ72610.1        | NULL     | 1390703 | 1391386 |
+| GCA_000970265.1    | MSLAZ_2290     | AKB75551.1        | NULL     | 2975643 | 2978066 |
+| GCA_900079115.1    | SSOP1_1525     | SAI85079.1        | NULL     | 1340732 | 1341376 |
+| GCA_000189935.2    | AABMKBHA_00165 | AABMKBHA_00165    | NULL     | 33470   | 34630   |
+| GCA_000979385.1    | EO92_18095     | KKG11218.1        | NULL     | 53457   | 54251   |
 
 
 
