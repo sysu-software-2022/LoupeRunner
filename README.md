@@ -432,7 +432,7 @@ WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
 
 
 
-### **Step10: Making profiles ** (Parallalized)
+### **Step10: Making profiles** (Parallalized)
 
 Tool `blastdbcmd`, `muscle` required
 
