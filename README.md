@@ -226,13 +226,13 @@ The entire procedure of **LoupeRunner** can be separated into 14 steps pipeline:
 
 
 
-#### **Step4: Extracting CDS**
+### **Step4: Extracting CDS**
 
 This step is commented in the code, coding sequence(CDS) file is optional, if you need to extract seeds from CDS file, this step offers you a direct way to do so.
 
 
 
-#### **Step5: Extracting seeds**
+### **Step5: Extracting seeds**
 
 - Input: `Archaea_Cas.csv`,  `CDS.pty`
 
@@ -272,7 +272,7 @@ Our example show in the table below:
 
 
 
-#### **Step6:  Selecting neighborhoods**
+### **Step6:  Selecting neighborhoods**
 
 Select neighborhood around seeds
 
@@ -336,7 +336,7 @@ WP_013825940.1	1553724..1554780	-	Methanobacterium paludis-GCF_000214725.1	NC_01
 
 
 
-#### **Step7: Collecting protein IDs**
+### **Step7: Collecting protein IDs**
 
 - Input:  `Vicinity_Cas` (list of proteins in vicinity of seeds)
 
@@ -364,7 +364,7 @@ WP_004030646.1
 
 
 
-#### **Step8: Fetching protein sequences**
+### **Step8: Fetching protein sequences**
 
 Tool `blastdbcmd`required
 
@@ -399,7 +399,7 @@ PDIIENNVNGLLVTPTNPEKLEDNLNLLLQNPEIRAKFSENALKGIKKYSWKNIATETLKLYESLLENR
 
 
 
-#### **Step9:  Clustering protein seqiences**
+### **Step9:  Clustering protein seqiences**
 
 
 
@@ -432,7 +432,7 @@ WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
 
 
 
-#### **Step10: Making profiles **(Parallalized)
+### **Step10: Making profiles ** (Parallalized)
 
 Tool `blastdbcmd`, `muscle` required
 
@@ -494,7 +494,7 @@ VLPSGKCDFVDKRQFKGRDFKRK
 
 
 
-#### **Step11: Running PSI-BLAST for profiles** (Parallalized)
+### **Step11: Running PSI-BLAST for profiles** (Parallalized)
 
 - Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, Database
   - Parameter:  
@@ -563,7 +563,7 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
 
 
 
-#### **Step12: Sorting blast hits** 
+### **Step12: Sorting blast hits** 
 
 - Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, `CDS.pty `, `VicinityIDs_Cas.lst`, `Seeds_Cas.tsv`, `Vicinity_Cas.tsv`
 
@@ -619,7 +619,7 @@ WP_145975997.1	122	6	111	HPVIAIILGNIIT-GFLGGFVI-ILPISLLSHILVIF--IFVLGGFSATYLSRTN
 
 
 
-#### **Step13: Calculating LOUPE metric** (Parallalized)
+### **Step13: Calculating LOUPE metric** (Parallalized)
 
 - Input: `Cas_OUTPUT/CLUSTERS_Cas/Sorted/CLUSTER_*.hits_sorted`, `VicinityPermissiveClustsLinear_Cas.tsv`, Database
   - Parameter:	
@@ -686,7 +686,7 @@ CLUSTER_135	2	11	7	0.18181818181818182
 
 
 
-#### **Step14: Sorting Relevance**
+### **Step14: Sorting Relevance**
 
 
 
