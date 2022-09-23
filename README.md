@@ -210,7 +210,13 @@ For processing large **seeds** by executing **LoupeTool,** you may have to wait 
 
 ### Experimental Design
 
-The entire procedure of **LoupeRunner** can be separated into 14 steps:
+> Input and Output files path can be specified in `config.py`
+
+The entire procedure of **LoupeRunner** can be separated into 14 steps pipeline:
+
+- In order to demonstrate every steps precisely, input and output file names are referenced from our example data.
+
+
 
 #### **Step1**
 
@@ -222,11 +228,45 @@ The entire procedure of **LoupeRunner** can be separated into 14 steps:
 
 #### **Step4: Extracting CDS**
 
-
+This step is commented in the code, coding sequence(CDS) file is optional, if you need to extract seeds from CDS file, this step offers you a direct way to do so.
 
 
 
 #### **Step5: Extracting seeds**
+
+- Input: `Archaea_Cas.csv`,  `CDS.pty`
+
+Fetching seeds of interest (e.g. Archaea_Cas.csv) in from (e.g. CDS.pty) provided in database, essential attribute includes: 
+
+assembly_accession, locus_tag, product_accession, contigID, start, end.
+
+Our example show in the table below: 
+
+> Archaea_Cas.csv (partial)
+
+| assembly_accession | locus_tag      | product_accession | contigID | start   | end     |
+| ------------------ | -------------- | ----------------- | -------- | ------- | ------- |
+| GCA_000230715.3    | Natgr_1399     | AFZ72610.1        |          | 1390703 | 1391386 |
+| GCA_000970265.1    | MSLAZ_2290     | AKB75551.1        |          | 2975643 | 2978066 |
+| GCA_900079115.1    | SSOP1_1525     | SAI85079.1        |          | 1340732 | 1341376 |
+| GCA_000189935.2    | AABMKBHA_00165 | AABMKBHA_00165    |          | 33470   | 34630   |
+| GCA_000979385.1    | EO92_18095     | KKG11218.1        |          | 53457   | 54251   |
+
+
+
+
+
+- Output:  `Seeds_Cas.tsv`
+
+| Assembly        | LociID        | Accession      | ContigID          | Start   | End     |
+| :-------------- | ------------- | -------------- | ----------------- | ------- | ------- |
+| GCF_001729285.1 | A9507_RS00880 | WP_069582310.1 | NZ_LZPM01000003.1 | 122396  | 122990  |
+| GCF_000214725.1 | MSWAN_RS07020 | WP_013825929.1 | NC_015574.1       | 1538607 | 1539333 |
+| GCF_900095295.1 | MCBB_RS06490  | MCBB_RS06490   | NZ_LT607756.1     | 1386026 | 1387868 |
+| GCF_900095295.1 | MCBB_RS06465  | WP_071908025.1 | NZ_LT607756.1     | 1380806 | 1381325 |
+| GCF_000302455.1 | A994_RS11405  | WP_004031769.1 | NZ_AMPO01000012.1 | 2073    | 2592    |
+
+
 
 
 
@@ -234,17 +274,125 @@ The entire procedure of **LoupeRunner** can be separated into 14 steps:
 
 #### **Step6:  Selecting neighborhoods**
 
+Select neighborhood around seeds
 
+- Input:  `Seeds_Cas.tsv`
+  - NeighborhoodVicinitySize(default: 10000): change the bidirectional search domain of seed(i.e. offset), if this increase, the search domain will be expand correspondingly. 
+
+
+
+- Output: `Vicinity_Cas` (list of proteins in vicinity of seeds)
+
+```
+===
+WP_013644337.1	708731..710093	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644338.1	710089..710788	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644339.1	711103..711739	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644340.1	711758..712142	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644341.1	712125..712428	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644342.1	712458..714444	-	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644343.1	714508..714814	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644344.1	714975..716799	-	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644345.1	717225..717567	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644346.1	717609..718158	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644347.1	718126..718936	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644348.1	718970..719564	-	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644349.1	719950..720817	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644350.1	720894..721371	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644351.1	721367..722756	-	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644352.1	723448..724663	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644353.1	724962..725496	-	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644354.1	725806..726502	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644355.1	726503..726824	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644356.1	726849..727638	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644357.1	728039..728633	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644358.1	728644..729043	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+WP_013644359.1	729210..732126	+	Methanobacterium lacus-GCF_000191585.1	NC_015216.1
+===
+WP_013825920.1	1526093..1526849	+	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825921.1	1527015..1527132	+	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825922.1	1527204..1527612	+	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825923.1	1527926..1528274	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825924.1	1528859..1529774	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825925.1	1529770..1530721	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825926.1	1536731..1536995	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_048188005.1	1537000..1537945	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_048188364.1	1538060..1538582	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825929.1	1538607..1539333	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825930.1	1539392..1541603	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825931.1	1541612..1542230	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825932.1	1542226..1543225	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825933.1	1543225..1544599	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825934.1	1545276..1546743	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_052296851.1	1546885..1547275	+	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825936.1	1547556..1548792	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825937.1	1549070..1550777	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825938.1	1551299..1552286	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825939.1	1552375..1553728	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+WP_013825940.1	1553724..1554780	-	Methanobacterium paludis-GCF_000214725.1	NC_015574.1
+===
+```
 
 
 
 #### **Step7: Collecting protein IDs**
+
+- Input:  `Vicinity_Cas` (list of proteins in vicinity of seeds)
+
+Extract and sort proteins in vicinity of seeds in ascending order forming VicinityIDs in `.lst` file.
+
+
+
+- Output: `VicinityIDs_Cas.lst  ` (partial)
+
+```
+WP_004030635.1
+WP_004030636.1
+WP_004030637.1
+WP_004030638.1
+WP_004030640.1
+WP_004030642.1
+WP_004030643.1
+WP_004030644.1
+WP_004030645.1
+WP_004030646.1
+.....
+```
 
 
 
 
 
 #### **Step8: Fetching protein sequences**
+
+Tool `blastdbcmd`required
+
+- Input: `VicinityIDs_Cas.lst`, Database
+
+using the file generated in Step 7 ( `VicinityIDs_Cas.lst`) to get protein sequences from database.
+
+
+
+
+
+- Output: `Vicinity_Cas.faa` (partial)
+
+```
+>ref|WP_004030635.1| glycosyltransferase family 4 protein [Methanobacterium formicicum]
+MDKIAISVVVDIFDDEGTTVRPKRVAELLKNNFDTCFINRSSSDLKEINGIPVHIVKPAGTKLWNIKLFGLLSGNDFDFV
+YCSSDWFGFLTYFMLKRFYDYKIIFEAHTIISEEFKERKAHPFKVFFFQVLEKFAIKHSDYVVALSENIYDYYSYNKNIE
+LVHVFIDEELFISDVKRKINDDKKVIGLIGPFDEFSNQYFLEFLRKNIDQFDDRISFRIIGKCQDKIQHPRIEYTGYMNS
+IHDYVNVLSSLDGLLVPSRVATLGPLNKIIEAMACSVPVFTTPKGIVGLYNIKPGQEIYVLEEDDLVCGLNNHVFSDELI
+NIAKNARLYVEKYYSKKANEKKLLRIFNRLNEG
+>ref|WP_004030636.1| glycosyltransferase family 4 protein [Methanobacterium formicicum]
+MIIGYFSSTFPYSVSNPKYFCGGSSLATHSLVNEISNSDIDIKVFTTSADSEDHLDMDGRMGIYRYATKIKLLTSPISLG
+LFHKPLEHDVDLVHVSFDMPPGPFAAYRYARKKSLPLILTYHGDWDPDYGSFVRKVGVSINNKFVSDLLSYADIIISPSK
+LYAKKSKYLSKYLDKIRVIPNGIDLDEFQLNYSQSECREKLNLPLECKIILFFGYLTPYKGPDILLGAFREVLKNQPDTV
+LLFAGNGNMEDELKKLARQWNIQDNVIFAGFVDKKMRSLYYKSADIFCLPSTMSTECYPLAILEAMASGVPVVASDIGGI
+PDIIENNVNGLLVTPTNPEKLEDNLNLLLQNPEIRAKFSENALKGIKKYSWKNIATETLKLYESLLENR
+```
+
+
 
 
 
@@ -254,29 +402,110 @@ The entire procedure of **LoupeRunner** can be separated into 14 steps:
 
 
 
+- Input:  `Vicinity_Cas.faa`
+  - PermissiveClusteringThreshold(default: 0.3)
+
+Run the following command to cluster protein sequences contained in the file  `Vicinity_Cas.faa` using a
+sequence similarity cutoff value of 0.3 and save results in the `VicinityPermissiveClustsLinear_Cas.tsv` file:
+
+​	
+
+- Output: `VicinityPermissiveClustsLinear_Cas.tsv` (partial)
+
+```
+WP_013825920.1	WP_013	825920.1
+WP_023991503.1	WP_023991503.1
+WP_048191534.1	WP_048191534.1 WP_004030642.1 WP_023992731.1
+WP_071906989.1	WP_071906989.1
+WP_071907103.1	WP_071907103.1 WP_013644342.1 WP_013826017.1
+WP_095651991.1	WP_095651991.1
+WP_100907657.1	WP_100907657.1
+WP_004031781.1	WP_004031781.1 WP_100906549.1
+WP_013825921.1	WP_013825921.1 WP_095651998.1 WP_100906253.1 WP_095651996.1 WP_023992734.1 WP_013826664.1 WP_095651994.1 WP_095651997.1 WP_179288731.1 WP_023992735.1 WP_100906252.1 WP_023992122.1 WP_232727999.1
+WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
+```
 
 
-#### **Step10: Making profiles**
+
+#### **Step10: Making profiles **(Parallalized)
+
+Tool `blastdbcmd`, `muscle` required
+
+- Input: 
 
 
 
 
 
-#### **Step11: Running PSI-BLAST for profiles**
 
 
 
 
 
-#### **Step12: Sorting blast hits**
+
+
+
+- Output: 
+
+
+
+#### **Step11: Running PSI-BLAST for profiles** (Parallalized)
+
+- Input: 
 
 
 
 
 
-#### **Step13: Calculating LOUPE metric**
 
 
+
+
+
+
+
+
+- Output: 
+
+
+
+#### **Step12: Sorting blast hits** 
+
+- Input: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Output: 
+
+
+
+#### **Step13: Calculating LOUPE metric** (Parallalized)
+
+- Input: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Output: 
 
 
 
