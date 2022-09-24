@@ -403,8 +403,6 @@ PDIIENNVNGLLVTPTNPEKLEDNLNLLLQNPEIRAKFSENALKGIKKYSWKNIATETLKLYESLLENR
 
 ### **Step9:  Clustering protein seqiences**
 
-
-
 - Input:  `Vicinity_Cas.faa`
   - Parameter:
   
@@ -420,13 +418,8 @@ sequence similarity cutoff value of 0.3 and save results in the `VicinityPermiss
 - Output: `VicinityPermissiveClustsLinear_Cas.tsv` (partial)
 
 ```
-WP_013825920.1	WP_013	825920.1
-WP_023991503.1	WP_023991503.1
 WP_048191534.1	WP_048191534.1 WP_004030642.1 WP_023992731.1
-WP_071906989.1	WP_071906989.1
 WP_071907103.1	WP_071907103.1 WP_013644342.1 WP_013826017.1
-WP_095651991.1	WP_095651991.1
-WP_100907657.1	WP_100907657.1
 WP_004031781.1	WP_004031781.1 WP_100906549.1
 WP_013825921.1	WP_013825921.1 WP_095651998.1 WP_100906253.1 WP_095651996.1 WP_023992734.1 WP_013826664.1 WP_095651994.1 WP_095651997.1 WP_179288731.1 WP_023992735.1 WP_100906252.1 WP_023992122.1 WP_232727999.1
 WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
@@ -436,23 +429,15 @@ WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
 
 ### **Step10: Making profiles** (Parallalized)
 
-Tool `blastdbcmd`, `muscle` required
+ ▷ `blastdbcmd`, `muscle` tools required
 
 - Input:  `VicinityPermissiveClustsLinear_Cas.tsv`, Database
 
+Make profiles for the clusters in `VicinityPermissiveClustsLinear_Cas.tsv`, 
 
+This step will create a protein profile for each permissive cluster for proteins from the database using the Muscle program and will save the profiles to the CLUSTERS\_\${DefenseSystem_Name} folder(\${DefenseSystem_Name} is a variable which is configured in `config.py` ) with an ‘.ali’ extension and CLUSTER_ prefix with line number after the prefix as cluster ID (this step will create the  CLUSTERS\_\${DefenseSystem_Name} folder if it doesn't exist in the current directory).
 
-
-
-
-
-
-
-
-
-
-
-
+▷ For different configuration of muscle in this step, see [muscle documents](https://drive5.com/muscle5/manual/).
 
 
 
@@ -498,23 +483,19 @@ VLPSGKCDFVDKRQFKGRDFKRK
 
 ### **Step11: Running PSI-BLAST for profiles** (Parallalized)
 
+▷ `psiblast` tool required
+
 - Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, Database
   - Parameter:  
-    - ThreadNum
+    - ThreadNum: Number of threads (CPUs) to use in blast search.
 
 
 
+The script in of step executes a PSIBLAST search of the genomic database with the
+profiles created at Step 10 used as queries and save results for each cluster with a ‘.hits’ extension in
+the CLUSTERS\_\${DefenseSystem_Name} folder.
 
-
-
-
-
-
-
-
-
-
-
+For more information, see [BLAST® Command Line Applications User Manual](https://scicomp.ethz.ch/public/manual/BLAST/BLAST.pdf)
 
 
 
@@ -567,23 +548,26 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
 
 ### **Step12: Sorting blast hits** 
 
+▷ 
+
 - Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, `CDS.pty `, `VicinityIDs_Cas.lst`, `Seeds_Cas.tsv`, `Vicinity_Cas.tsv`
 
   - Parameters: 
 
     - (1) SortingOverlapThreshold:
 
-      
-
+      Overlap threshold; hits are subject to sorting between two profiles if they overlap by more than
+      the threshold value
+    
     - (2) SortingCoverageThresold:
-
+    
+      Overlap threshold; hits are subject to sorting between two profiles if they overlap by more than
+      the threshold value
+    
+    
     
 
-
-
-
-
-
+This step will read the BLAST hits from the CLUSTERS folder and save the sorted results for each cluster in the CLUSTERS\_\${DefenseSystem_Name} /Sorted/ folder with a ‘.hits_sorted’ extension:
 
 
 
@@ -593,6 +577,14 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
 
 
 - Output: `Cas_OUTPUT/CLUSTERS_Cas/Sorted/CLUSTER_*.hits_sorted`
+
+Format
+
+| ProteinID      | BLAST score | Alignment start | Alignment stop | Alignment sequence                                           | CLUSTERID | Contig      | Is in vicinity islands | ORF start | ORF stop | Distance to the bait |
+| -------------- | ----------- | --------------- | -------------- | ------------------------------------------------------------ | --------- | ----------- | ---------------------- | --------- | -------- | -------------------- |
+| WP_013825920.1 | 1286        | 1               | 251            | MGLQLHPIISIPFGVITTIVFLQVFGIPTLPLGGNAGILILIPVAIIFGGFTATYFTDTNDKKIIYSICVGIIISFITLILGLKEYIGYNDVVVMFISFCVMAGIGGFLGKIADEVNRKILEIKYKILSNISESKKNILKNVLISILFVGMMSFIFVGLIFMPFGNPDIIIIQSSGFSPNSTLISPSTVTWINNDTKIHRVVSDYGLFDSGNITPGQSYSHYFRDVKAYPYHDSIDPSMKGTVLLPMSPGE | CLUSTER_1 | NC_015574.1 | 1                      | 1526093   | 1526849  | 6                    |
+
+
 
 > CLUSTER_1.hits_sorted
 
@@ -623,17 +615,15 @@ WP_145975997.1	122	6	111	HPVIAIILGNIIT-GFLGGFVI-ILPISLLSHILVIF--IFVLGGFSATYLSRTN
 
 ### **Step13: Calculating LOUPE metric** (Parallalized)
 
+▷ `parallel` , `mmseqs` tool required
+
 - Input: `Cas_OUTPUT/CLUSTERS_Cas/Sorted/CLUSTER_*.hits_sorted`, `VicinityPermissiveClustsLinear_Cas.tsv`, Database
   - Parameter:	
-    - ThreadNum:
+    - ThreadNum: Number of threads (CPUs) to use in blast search.
 
 
 
-
-
-
-
-
+This step will calculate effective cluster sizes and the relevance metrics for all sorted hits in CLUSTERS\_\${DefenseSystem_Name} /Sorted/, created in the previous step, and save results into the file specified in arguments:
 
 
 
@@ -641,6 +631,12 @@ WP_145975997.1	122	6	111	HPVIAIILGNIIT-GFLGGFVI-ILPISLLSHILVIF--IFVLGGFSATYLSRTN
 
 
 - Output:  `Relevance_Cas.tsv`
+
+| ClusterID | Effective size in vicinity of baits | Effective size in entire database | Median distance to bait (in ORFs) | DSED                 |
+| --------- | ----------------------------------- | --------------------------------- | --------------------------------- | -------------------- |
+| CLUSTER_1 | 1                                   | 21                                | 9                                 | 0.047619047619047616 |
+
+
 
 > Relevance_Cas.tsv (partial)
 
