@@ -218,7 +218,7 @@ The entire procedure of **LoupeRunner** can be separated into 14 steps pipeline:
 
 
 
-### **Step1: Download genomic data from Refseq/GeneBank **
+### **Step1: Download genomic data from Refseq/GeneBank**
 
 You need access to genomic data. Genomic data include genomic protein sequence (protein.faa) and protein annotation (genomic.gbff). If you are using the FTP Refseq (https://ftp.ncbi.nlm.nih.gov/refseq/release/archaea/), we recommend using the following code to download large data.
 First use the following python scrpit to get url:
