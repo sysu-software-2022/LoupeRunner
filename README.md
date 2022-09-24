@@ -548,7 +548,7 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
 
 ### **Step12: Sorting blast hits** 
 
-- Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, `CDS.pty `, `VicinityIDs_Cas.lst`, `Seeds_Cas.tsv`, `Vicinity_Cas.tsv`
+- Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, `CDS.pty`, `VicinityIDs_Cas.lst`, `Seeds_Cas.tsv`, `Vicinity_Cas.tsv`
 
   - Parameters: 
 
