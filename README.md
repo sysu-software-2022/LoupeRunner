@@ -611,7 +611,7 @@ WP_145975997.1	122	6	111	HPVIAIILGNIIT-GFLGGFVI-ILPISLLSHILVIF--IFVLGGFSATYLSRTN
 
 
 
-### **Step13: Calculating LOUPE metric** (Parallalized)
+### **Step13: Calculating LOUPE metric** (Parallelized)
 
 ▷ `parallel` , `mmseqs` tool required
 
