@@ -427,7 +427,7 @@ WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
 
 
 
-### **Step10: Making profiles** (Parallalized)
+### **Step10: Making profiles** (Parallelized)
 
  ▷ `blastdbcmd`, `muscle` tools required
 
@@ -481,7 +481,7 @@ VLPSGKCDFVDKRQFKGRDFKRK
 
 
 
-### **Step11: Running PSI-BLAST for profiles** (Parallalized)
+### **Step11: Running PSI-BLAST for profiles** (Parallelized)
 
 ▷ `psiblast` tool required
 
