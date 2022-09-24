@@ -184,13 +184,13 @@ After configuration, execute `LoupeRunner.py`,  your data will be processed auto
 7. SortingOverlapThreshold and SortingCoverageThresold: this twos parameters are used to filter **Low matching hit** produced by **PSIBLAST** in **step12**, increase them will result in the spurt of specificity.
 8. ThreadNum: thread number should be contingent on your **CPU core number**.
 
-hint: the most convenient way of managing these relevant paths is create a new directory for processing your data or use existing one and include all your files in this directory.
+Hint: the most convenient way of managing these relevant paths is create a new directory for processing your data or use existing one and include all your files in this directory.
 
 
 
 ##### II. For users:
 
-For processing large **seeds** by executing **LoupeTool,** you may have to wait for longer time, which is contingent on your CPU core number (some bottleneck steps in **LoupeTool** are optimized by **parallelization** and the performance is positively correlated with the CPU core number)
+For processing large **seeds** by executing **LoupeRunner,** you may have to wait for longer time, which is contingent on your CPU core number (some bottleneck steps in **LoupeRunner are optimized by parallelization** and the performance is positively correlated with the CPU core number)
 
 
 
@@ -547,8 +547,6 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
 
 
 ### **Step12: Sorting blast hits** 
-
-▷ 
 
 - Input:  ``CLUSTERS_Cas/CLUSTER_*.ali``, `CDS.pty `, `VicinityIDs_Cas.lst`, `Seeds_Cas.tsv`, `Vicinity_Cas.tsv`
 
