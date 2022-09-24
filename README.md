@@ -218,17 +218,95 @@ The entire procedure of **LoupeRunner** can be separated into 14 steps pipeline:
 
 
 
-#### **Step1**
+### **Step1: Download genomic data from Refseq/GeneBank **
 
-#### **Step2**
+You need access to genomic data. Genomic data include genomic protein sequence (protein.faa) and protein annotation (genomic.gbff). If you are using the FTP Refseq (https://ftp.ncbi.nlm.nih.gov/refseq/release/archaea/), we recommend using the following code to download large data.
+First use the following python scrpit to get url:
 
-#### **Step3**
+```python
+# get url from Refseq relese,there we show how to download all genomic data of prokaryotes
+# pip install requests
+import os
+import re
+import requests
+ 
+def load_url_context(type ,url):
+    # get url
+    request = requests.get(url)
+    raw_list = re.compile(r'<a.*?>(.*?)</a>').finditer(request.text.strip())
+    file_name = "_".join([type,"context.txt"])
+    with open(file_name, "w") as f:
+        for i in raw_list:
+            x = i.group(1)
+            if x.endswith("genomic.gbff.gz") or x.endswith("protein.faa.gz"):
+                file_https = ''.join([url,x])
+                #start with rsync
+                file_ftp = file_https.replace("https","rsync")
+                #print(file_ftp)
+                f.write(file_ftp)
+                f.write('\n')
+        f.close()    
+ 
+if __name__ == "__main__":
+    archaea_url = "https://ftp.ncbi.nlm.nih.gov/refseq/release/archaea/"
+    bacteria_url = "https://ftp.ncbi.nlm.nih.gov/refseq/release/bacteria/"
+    load_url_context("archaea", archaea_url)
+    load_url_context("bacteria", bacteria_url)
+```
+
+Then use rsync to download the data:
+
+```bash
+#!/bin/bash
+# you can modify TXT file to change which data you want to download
+while read line
+do 
+    rsync --copy-links --recursive --times --verbose $line archaea/
+done < archaea_context.txt
+```
+
+It may cost much more time than use wget, however it 
+
+
+
+
+
+### **Step2: Preparation of BLAST database**
+
+Unzip the above files and merge all .faa files into a single file (ProteinSequences.faa):
+
+```bash
+cat *protein.faa > YourWorkPath/ProteinSequences.faa
+```
+
+Create a BLAST database using the makeblastdb command:
+
+```bash
+makeblastdb -in ProteinSequences.faa -out ProteinsDB -dbtype prot -parse_seqids
+```
+
+
+
+
+
+### **Step3: Preparation of CDS**
+
+The annotation data is very large, especially the bacterial genome data, but there is a lot of information we do not need, so we need to further operation to simplify the content.
+We use CDS_extract.py to import .gbff file. The output data format(Text file, delimited by Tab) is like:
+
+| LocusTag      | ORFStart:ORFStop | Strand | OrganismID                             | ContigID    | Accession      |
+| ------------- | ---------------- | ------ | -------------------------------------- | ----------- | -------------- |
+| METBO_RS00005 | 51:1401          | +      | Methanobacterium lacus-GCF_000191585.1 | NC_015216.1 | WP_013643605.1 |
+
+
 
 
 
 ### **Step4: Extracting CDS**
 
 This step is commented in the code, coding sequence(CDS) file is optional, if you need to extract seeds from CDS file, this step offers you a direct way to do so.
+
+
 
 
 
@@ -267,8 +345,6 @@ Our example show in the table below:
 | GCF_900095295.1 | MCBB_RS06490  | MCBB_RS06490   | NZ_LT607756.1     | 1386026 | 1387868 |
 | GCF_900095295.1 | MCBB_RS06465  | WP_071908025.1 | NZ_LT607756.1     | 1380806 | 1381325 |
 | GCF_000302455.1 | A994_RS11405  | WP_004031769.1 | NZ_AMPO01000012.1 | 2073    | 2592    |
-
-
 
 
 
@@ -338,6 +414,8 @@ WP_013825940.1	1553724..1554780	-	Methanobacterium paludis-GCF_000214725.1	NC_01
 
 
 
+
+
 ### **Step7: Collecting protein IDs**
 
 - Input:  `Vicinity_Cas` (list of proteins in vicinity of seeds)
@@ -399,8 +477,6 @@ PDIIENNVNGLLVTPTNPEKLEDNLNLLLQNPEIRAKFSENALKGIKKYSWKNIATETLKLYESLLENR
 
 
 
-
-
 ### **Step9:  Clustering protein seqiences**
 
 - Input:  `Vicinity_Cas.faa`
@@ -424,6 +500,8 @@ WP_004031781.1	WP_004031781.1 WP_100906549.1
 WP_013825921.1	WP_013825921.1 WP_095651998.1 WP_100906253.1 WP_095651996.1 WP_023992734.1 WP_013826664.1 WP_095651994.1 WP_095651997.1 WP_179288731.1 WP_023992735.1 WP_100906252.1 WP_023992122.1 WP_232727999.1
 WP_013826016.1	WP_013826016.1 WP_013644343.1 WP_071907102.1
 ```
+
+
 
 
 
@@ -478,6 +556,8 @@ GAFIIRGSRNFIRNAPLLVAVGIVDYEGKRIMAGPPEALVKYTDNYVVIKPGYTKKEEMARQIRHKIDEEKLLSIEDVVR
 VLPSGKCDFVDKRQFKGRDFKRK
 
 ```
+
+
 
 
 
@@ -543,6 +623,8 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
 # BLAST processed 1 queries
 
 ```
+
+
 
 
 
@@ -678,6 +760,8 @@ CLUSTER_130	1	2	3	0.5
 CLUSTER_131	1	1	3	1.0
 
 ```
+
+
 
 
 
