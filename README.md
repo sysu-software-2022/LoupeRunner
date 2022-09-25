@@ -1,3 +1,4 @@
+<p align="center">
 <center><img src="./public/loupe.jpg" alt="image-20220925112248723" width="150" /></center>
 
 <h1>
@@ -9,7 +10,7 @@
 <center>iGEM SYSU-Software 2022</center>
 </h1>																
 
-
+</p>
 
 ## 🚩Introduction
 
