@@ -1,5 +1,6 @@
-
+<p  align="center">
 <img src="./public/loupe.jpg" alt="image-20220925112248723" width="150"  align="center" />
+</p>
 
 <h1 align="center">
 LoupeRunner
