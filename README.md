@@ -26,7 +26,7 @@ For details see [LoupeTool](https://github.com/sysu-software-2022/LoupeTool)
 
 
 
-✩ **Operating System constraint:** We strongly recommend you run **LoupeTool** in **Linux** or **macOS**.
+✩ **Acceptable Operating System:** We strongly recommend you run **LoupeTool** in **Linux** or **macOS**.
 
 
 
