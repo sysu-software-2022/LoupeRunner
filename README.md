@@ -1,5 +1,5 @@
 <p  align="center">
-<img src="./public/loupe.jpg" alt="image-20220925112248723" width="150"  align="center" />
+<img src="./public/loupe.jpg" alt="image-20220925112248723" width="150"  align="center" style="border-radius:50%"/>
 </p>
 
 <h1 align="center">
