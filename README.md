@@ -1,4 +1,27 @@
-# LoupeRunner																	<img src="./public/loupe.jpg" alt="image-20220925112248723" width="48" />
+<center><img src="./public/loupe.jpg" alt="image-20220925112248723" width="150" /></center>
+
+<h1>
+<center>LoupeRunner</center>
+</h1>
+
+
+<h1>
+<center>iGEM SYSU-Software 2022</center>
+</h1>																
+
+
+
+## 🚩Introduction
+
+[![PyPI version](https://img.shields.io/badge/pypi-v0.1-yellowgreen?logo=pypi&logoColor=yellow)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-yellowgreen?style=flat&logo=python&logoColor=yellow&color=blue)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/GitHub-repository-yellowgreen?style=flat&logo=github&logoColor=white&color=blue)](https://github.com/sysu-software-2022/LoupeTool)
+
+**A modularized LoupeRunner with step by step functions**
+
+You can run **LoupeRunner** step by step with your customized parameters.
+
+ We strongly recommend you execute **LoupeRunner** on **high performance computing platform(HPC).**
+
+
 
 [![PyPI version](https://img.shields.io/badge/pypi-v0.1-yellowgreen?logo=pypi&logoColor=yellow)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-yellowgreen?style=flat&logo=python&logoColor=yellow&color=blue)](https://badge.fury.io/py/LoupeTool) [![Python 3.6](https://img.shields.io/badge/GitHub-repository-yellowgreen?style=flat&logo=github&logoColor=white&color=blue)](https://github.com/sysu-software-2022/LoupeTool)
 
