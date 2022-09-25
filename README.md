@@ -1,13 +1,13 @@
 
-<center><img src="./public/loupe.jpg" alt="image-20220925112248723" width="150" /></center>
+<img src="./public/loupe.jpg" alt="image-20220925112248723" width="150"  align="center" />
 
 <h1 align="center">
-<center>LoupeRunner</center>
+LoupeRunner
 </h1>
 
 
-<h1>
-<center>iGEM SYSU-Software 2022</center>
+<h1  align="center">
+iGEM SYSU-Software 2022
 </h1>																
 
 
