@@ -6,7 +6,7 @@
 
 You can run **LoupeRunner** step by step with your customized parameters.
 
- We strongly recommend you execute **LoupeRunner** on **high performance computing platform.**
+ We strongly recommend you execute **LoupeRunner** on **high performance computing platform(HPC).**
 
 
 
@@ -22,9 +22,11 @@ For details see [LoupeTool](https://github.com/sysu-software-2022/LoupeTool)
 
 ## 🔌Dependences Installation (CRITICAL)
 
-The following **4** tools and **5** python packages are significantly critical for your successful execution of LoupeTool.
+✩ **Dependent Tools**: The following **4** tools and **5** python packages are significantly critical for your successful execution of LoupeTool.
 
-We strongly recommend you run **LoupeTool** in **Linux** or **macOS**.
+
+
+✩ **Operating System constraint:** We strongly recommend you run **LoupeTool** in **Linux** or **macOS**.
 
 
 
