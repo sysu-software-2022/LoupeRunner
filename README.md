@@ -506,7 +506,7 @@ PDIIENNVNGLLVTPTNPEKLEDNLNLLLQNPEIRAKFSENALKGIKKYSWKNIATETLKLYESLLENR
 
 
 
-### **Step9:  Clustering protein seqiences**
+### **Step9:  Clustering protein sequences**
 
 - Input:  `Vicinity_Cas.faa`
   - Parameter:
