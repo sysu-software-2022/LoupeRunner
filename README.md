@@ -328,11 +328,14 @@ We use CDS_extract.py to import .gbff file. The output data format(Text file, de
 
 
 
-### **Step4: Extracting CDS**
+### **Step4: Preparation of Seeds**
 
-This step is commented in the code, coding sequence(CDS) file is optional, if you need to extract seeds from CDS file, this step offers you a direct way to do so.
+Prepare your seed data as the format like:
+| Assembly        | LociID        | Accession      | ContigID          | Start   | End     |
+| :-------------- | ------------- | -------------- | ----------------- | ------- | ------- |
+| GCF_001729285.1 | A9507_RS00880 | WP_069582310.1 | NZ_LZPM01000003.1 | 122396  | 122990  |
 
-
+if your seed data if from Genebank (GCA_XXXXXXXXX.1) without ContigID, we recommand you run Step 5 to supplementary data from CDS.
 
 
 
