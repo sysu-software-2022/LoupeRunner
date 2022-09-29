@@ -801,8 +801,14 @@ We classified cluster according to gene function: defense genes consistent with 
 
 In order to improve the discrimination of different types of clusters, we added two new parameters: the conservation of genes within clusters among species and the conservation among genera. The calculation is as follows:
 Suppose a CLUSTER contains the number of g genes, these genes appear in the number of n species/genus, each species has some of the clusters' genes and are not repetitive, denotes them as a1, a2, a3,...,an, where
-$$ a1+a2+a3+…+an = g $$
-$$ C = \frac{\frac{1}{a_1} + \frac{1}{a_2} +\frac{1}{a_3} +⋯+\frac{1}{a_n}}{n}$$
+
+
+
+$$ a_1 + a_2 + a_3 + ... + a_n = g \$$
+
+
+$$ C = \frac{\frac{1}{a_1} +\frac{1}{a_2} + \frac{1}{a_3} + ... + \frac{1}{a_n} }{n}\ $$
+
 C is the conservation in species or genus if cluster.
 The smaller the C value is, the stronger the conservation and concentration of the CLUSTER genes are. Large C value represents the genes of the CLUSTER is scattered in multiple species/genus, reflecting that the gene may have gene horizontal transfer.
 In conclusion, we have 6 parameters to describe our data: the number of times the cluster appears on the genome, the number of times the cluster appears on the genome, the ratio of the number of times the cluster appears in the selected range on either side of the seed to the number of times the cluster appears on the whole genome, the conservation of clusters at the species level, the conservation of clusters at the genus level, and the type of clusters. We save the data into *Relevance_Sorted_Category.csv* with the format like:
