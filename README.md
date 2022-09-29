@@ -784,8 +784,54 @@ CLUSTER_131	1	1	3	1.0
 
 
 
+### **Step14: Sorting Relevance and predictind candidates**
+▷ `blast+` tool required
+- input：DefenseSystem Name, DefenseSystem FilePath, PathToDatabase
+- output: Accession/, NewGene_Cas/
+In order to improve the efficiency  and avoid repeated reading of cluster files, Sorting relevance and Predicting candidates are put together.
 
-### **Step14: Sorting Relevance**
+First of all, We determined which type of defense system (Abi,Cas, DND, RM, TA. Demo is corresponding to Cas ), read the Cas_OUTPUT/CLUSTERS_Cas/*.ali files. according to gene function we classifiy them into five files:
+- *ACCESSION_Cas.txt* consists of all genes.
+- *ACCESSION_ONLY_Cas.txt* consists of the genes annotated as 'Cas', and we give the identifier **1** in the end of every line.
+- *ACCESSION_Other_DefenseGene.txt* consists of the genes annotated as other defense systems(ike 'toxin', 'abortive infection', 'restriction-modification'), and we give the identifier **2** in the end of every line.
+- *ACCESSION_hypothetical_Cas.txt* consists of the genes annotated as 'hypothetical', and we give the identifier **4** in the end of every line.
+- The genes which  not belong to *ACCESSION_ONLY_Cas.txt*, ACCESSION_Other_DefenseGene.txt and *ACCESSION_hypothetical_Cas.txt* are divided into *ACCESSION_HouseKeepingGene.txt* and we give the identifier **4** in the end of every line. Strictly speaking, the definition of House Keeping Gene we used is different from the usual one.
+
+We classified cluster according to gene function: defense genes consistent with input data --**1**, other defense genes -- **2**, housekeeping genes --**3**, and unknown functional genes --**4**. The functions of multiple Accession in each Cluster may be different. If so, select the following order: 1>2>3>4.
+
+In order to improve the discrimination of different types of clusters, we added two new parameters: the conservation of genes within clusters among species and the conservation among genera. The calculation is as follows:
+Suppose a CLUSTER contains the number of g genes, these genes appear in the number of n species/genus, each species has some of the clusters' genes and are not repetitive, denotes them as a1, a2, a3,...,an, where
+$$ a1+a2+a3+…+an = g $$
+$$ C = \frac{\frac{1}{a_1} + \frac{1}{a_2} +\frac{1}{a_3} +⋯+\frac{1}{a_n}}{n}$$
+C is the conservation in species or genus if cluster.
+The smaller the C value is, the stronger the conservation and concentration of the CLUSTER genes are. Large C value represents the genes of the CLUSTER is scattered in multiple species/genus, reflecting that the gene may have gene horizontal transfer.
+In conclusion, we have 6 parameters to describe our data: the number of times the cluster appears on the genome, the number of times the cluster appears on the genome, the ratio of the number of times the cluster appears in the selected range on either side of the seed to the number of times the cluster appears on the whole genome, the conservation of clusters at the species level, the conservation of clusters at the genus level, and the type of clusters. We save the data into *Relevance_Sorted_Category.csv* with the format like:
+| ClusterID | Effective size in vicinity of baits | Effective size in entire database | Median distance to bait (in ORFs) | DSED | Category | the conservation of clusters at the species level | the conservation of clusters at the genus level 
+|:------|------|------|------|------|------|------|------|
+| CLUSTER_1	| 1	| 21	| 9 |	0.047619047619047616 |	3	| 1.0 |	1.0
+
+> Relevance_Sorted_Category.csv (partial)
+```
+CLUSTER_1	1	21	9	0.047619047619047616	3	1.0	1.0
+CLUSTER_10	2	6	6	0.3333333333333333	3	0.3333333333333333	1.0
+CLUSTER_100	1	18	3	0.05555555555555555	3	1.0	1.0
+CLUSTER_101	1	12	4	0.08333333333333333	3	1.0	1.0
+CLUSTER_102	1	4	2	0.25	4	1.0	0.0
+CLUSTER_103	7	10	0	0.7	1	0.125	0.8571428571428571
+CLUSTER_104	2	4	2	0.5	4	0.5	1.0
+CLUSTER_105	2	11	2	0.18181818181818182	3	0.5	1.0
+CLUSTER_106	1	13	4	0.07692307692307693	3	1.0	1.0
+CLUSTER_107	7	9	0	0.7777777777777778	1	0.125	0.8571428571428571
+CLUSTER_108	1	7	4	0.14285714285714285	3	1.0	1.0
+CLUSTER_109	3	12	4	0.25	3	0.3333333333333333	1.0
+CLUSTER_11	2	12	12	0.16666666666666666	3	0.5	1.0
+CLUSTER_110	1	1	1	1.0	4	1.0	1.0
+CLUSTER_111	1	3	3	0.3333333333333333	4	1.0	0.0
+CLUSTER_112	3	20	7	0.15	3	0.2
+```
+
+We divide the data above into four clusters: the same resistance gene cluster and other resistance gene clusters are set as positive samples, non-resistance gene clusters are set as negative samples, and unknown function clusters are set as samples to be predicted. By analyzing the dataset, we found that there is a class imbalance problem between positive and negative samples and We divide the data above into four clusters: the same resistance gene cluster and other resistance gene clusters are set as positive samples, non-resistance gene clusters are set as negative samples, and unknown function clusters are set as samples to be predicted. By analyzing the dataset, we found that there is a class imbalance problem between positive and negative samples. Starting from the average performance, we finally chose to use random forest as our classification model. Based on the trained classification model, we predict the unknown clusters and obtain the final classification result.
+The data of predictind candidates saves in  NewGene_Cas/，contains the gene accession (.lst) and corresponding protein sequence (.faa) of each cluster with unknown function predicted as Cas.
 
 
 
