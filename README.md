@@ -790,8 +790,8 @@ CLUSTER_131	1	1	3	1.0
 - output: ``Accession/``, ``NewGene_Cas/``
 In order to improve the efficiency  and avoid repeated reading of cluster files, Sorting relevance and Predicting candidates are put together.
 
-First of all, We determined which type of defense system (Abi,Cas, DND, RM, TA. Demo is corresponding to Cas ), read the Cas_OUTPUT/CLUSTERS_Cas/*.ali files. according to gene function we classifiy them into five files:
--``ACCESSION_Cas.txt`` consists of all genes.
+First of all, We determined which type of defense system (Abi,Cas, DND, RM, TA. Demo is corresponding to Cas ), read the Cas_OUTPUT/CLUSTERS_Cas/*.ali files. according to gene function we classifiy them into five files
+- ``ACCESSION_Cas.txt`` consists of all genes.
 - ``ACCESSION_ONLY_Cas.txt`` consists of the genes annotated as 'Cas', and we give the identifier **1** in the end of every line.
 - ``ACCESSION_Other_DefenseGene.txt`` consists of the genes annotated as other defense systems(ike 'toxin', 'abortive infection', 'restriction-modification'), and we give the identifier **2** in the end of every line.
 - ``ACCESSION_hypothetical_Cas.txt`` consists of the genes annotated as 'hypothetical', and we give the identifier **4** in the end of every line.
