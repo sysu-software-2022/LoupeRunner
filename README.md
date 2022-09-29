@@ -787,15 +787,15 @@ CLUSTER_131	1	1	3	1.0
 ### **Step14: Sorting Relevance and predictind candidates**
 ▷ `blast+` tool required
 - input：DefenseSystem Name, DefenseSystem FilePath, PathToDatabase
-- output: Accession/, NewGene_Cas/
+- output: ``Accession/``, ``NewGene_Cas/``
 In order to improve the efficiency  and avoid repeated reading of cluster files, Sorting relevance and Predicting candidates are put together.
 
 First of all, We determined which type of defense system (Abi,Cas, DND, RM, TA. Demo is corresponding to Cas ), read the Cas_OUTPUT/CLUSTERS_Cas/*.ali files. according to gene function we classifiy them into five files:
-- *ACCESSION_Cas.txt* consists of all genes.
-- *ACCESSION_ONLY_Cas.txt* consists of the genes annotated as 'Cas', and we give the identifier **1** in the end of every line.
-- *ACCESSION_Other_DefenseGene.txt* consists of the genes annotated as other defense systems(ike 'toxin', 'abortive infection', 'restriction-modification'), and we give the identifier **2** in the end of every line.
-- *ACCESSION_hypothetical_Cas.txt* consists of the genes annotated as 'hypothetical', and we give the identifier **4** in the end of every line.
-- The genes which  not belong to *ACCESSION_ONLY_Cas.txt*, ACCESSION_Other_DefenseGene.txt and *ACCESSION_hypothetical_Cas.txt* are divided into *ACCESSION_HouseKeepingGene.txt* and we give the identifier **4** in the end of every line. Strictly speaking, the definition of House Keeping Gene we used is different from the usual one.
+-``ACCESSION_Cas.txt`` consists of all genes.
+- ``ACCESSION_ONLY_Cas.txt`` consists of the genes annotated as 'Cas', and we give the identifier **1** in the end of every line.
+- ``ACCESSION_Other_DefenseGene.txt`` consists of the genes annotated as other defense systems(ike 'toxin', 'abortive infection', 'restriction-modification'), and we give the identifier **2** in the end of every line.
+- ``ACCESSION_hypothetical_Cas.txt`` consists of the genes annotated as 'hypothetical', and we give the identifier **4** in the end of every line.
+- The genes which  not belong to ``ACCESSION_ONLY_Cas.txt``, ``ACCESSION_Other_DefenseGene.txt`` and ``ACCESSION_hypothetical_Cas.txt`` are divided into ``ACCESSION_HouseKeepingGene.txt`` and we give the identifier **4** in the end of every line. Strictly speaking, the definition of House Keeping Gene we used is different from the usual one.
 
 We classified cluster according to gene function: defense genes consistent with input data --**1**, other defense genes -- **2**, housekeeping genes --**3**, and unknown functional genes --**4**. The functions of multiple Accession in each Cluster may be different. If so, select the following order: 1>2>3>4.
 
@@ -831,12 +831,10 @@ CLUSTER_112	3	20	7	0.15	3	0.2
 ```
 
 We divide the data above into four clusters: the same resistance gene cluster and other resistance gene clusters are set as positive samples, non-resistance gene clusters are set as negative samples, and unknown function clusters are set as samples to be predicted. By analyzing the dataset, we found that there is a class imbalance problem between positive and negative samples and We divide the data above into four clusters: the same resistance gene cluster and other resistance gene clusters are set as positive samples, non-resistance gene clusters are set as negative samples, and unknown function clusters are set as samples to be predicted. By analyzing the dataset, we found that there is a class imbalance problem between positive and negative samples. Starting from the average performance, we finally chose to use random forest as our classification model. Based on the trained classification model, we predict the unknown clusters and obtain the final classification result.
-The data of predictind candidates saves in  NewGene_Cas/，contains the gene accession (.lst) and corresponding protein sequence (.faa) of each cluster with unknown function predicted as Cas.
 
 
 
-
-
+The data of predictind candidates saves in  ``NewGene_Cas/``，contains the gene accession (.lst) and corresponding protein sequence (.faa) of each cluster with unknown function predicted as Cas.
 
 
 
