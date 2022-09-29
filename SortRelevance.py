@@ -28,7 +28,6 @@ DS3P = 4
 
 
 
-# 阈值暂定，需要使用统计得到一个有说服力的数值
 DS3P_threshold = 0.0
 
 # CLUSTER.hits_sorted
