@@ -41,7 +41,7 @@ For details see [LoupeTool](https://github.com/sysu-software-2022/LoupeTool)
 
 
 
-✩ **Acceptable Operating System:** We strongly recommend you run **LoupeTool** in **Linux** or **macOS**.
+✩ **Acceptable Operating System:** We strongly recommend you execute **LoupeRunner** in **Linux** or **macOS**.
 
 
 
@@ -171,18 +171,42 @@ First and foremost, you should configure all parameters in `config.py`, an examp
 > config.py 
 
 ```python
-from LoupeTool import Loupe
 import os
-Loupe.LoupeRunner(DefenseSystem_Name="Cas",
-                    DefenseSystem_FilePath="./",
-                    PTYFile=os.path.join("./", "Cas_INPUT/Database/CDS.pty"),
-                    PathToDatabase=os.path.join("./", "Cas_INPUT/Database/ProteinDB"),
-                    SeedPath=os.path.join("./", "Cas_INPUT/Archaea_Cas.csv"),
-                    NeighborhoodVicinitySize=10000,
-                    PermissiveClusteringThreshold=0.3,
-                    SortingOverlapThreshold=0.4,
-                    SortingCoverageThresold=0.25,
-                    ThreadNum=os.cpu_count())
+
+# Hyper-parameters and Input files
+DefenseSystem_Name = "Cas"
+DefenseSystem_FilePath = os .path.join("./")  # Your Working Path
+GbffFile_Path = "./archaea"
+GbffFile_Type = "Cas"
+
+LOUPE_CONFIG_INPUT = {
+    "PTYFile": os.path.join("./", "Cas_INPUT/Database/CDS.pty"),
+    "PathToDatabase": os.path.join("./", "Cas_INPUT/Database/ProteinDB"),
+    "SeedPath":os.path.join("./", "Cas_INPUT/Archaea_Cas.csv"),
+    "NeighborhoodVicinitySize": 10000,
+    "PermissiveClusteringThreshold": 0.3,
+    "SortingOverlapThreshold": 0.4,
+    "SortingCoverageThresold": 0.25,
+    "ThreadNum": str(os.cpu_count())  # Change global thread number here
+}
+
+# Output files
+LOUPE_CONFIG_OUTPUT = {
+    "LOUPEFileName": os .path.join("./" + DefenseSystem_Name+"_OUTPUT", "Relevance_"+DefenseSystem_Name+".tsv"),
+    "VicinityClustersFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityPermissiveClustsLinear_"+DefenseSystem_Name+".tsv"),
+    "RelevanceCategoryName": "RelevanceCategory_" + DefenseSystem_Name + ".csv"
+}
+
+# Temporary files
+LOUPE_CONFIG_TEMPORARYFILES = {
+    "VicinityFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Vicinity_"+DefenseSystem_Name+".tsv"),
+    "VicinityIDsFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "VicinityIDs_"+DefenseSystem_Name+".lst"),
+    "VicinityFASTAFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Vicinity_"+DefenseSystem_Name+".faa"),
+    "ProfilesFolder": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "CLUSTERS_"+DefenseSystem_Name + "/"),
+    "SortedBLASTHitsFolder": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "CLUSTERS_"+DefenseSystem_Name, "Sorted/"),
+    "SeedsExtractedFileName": os.path.join("./" + DefenseSystem_Name+"_OUTPUT", "Seeds_" + DefenseSystem_Name + ".tsv"),
+
+}
 
 ```
 
@@ -196,9 +220,19 @@ After configuration, execute `LoupeRunner.py`,  your data will be processed auto
 2. DefenseSystem_FilePath: Your working directory;
 3. PTYFile: your **.pty** file path;
 4. SeedPath: your seed **.csv** file path;
-5. NeighborhoodVicinitySize: change the bidirectional search domain of seed, if this increase, the search domain will be expand correspondingly. Our Suggestion Value: CRISPR-Cas: 10000，TA: 2000
+5. NeighborhoodVicinitySize: change the bidirectional search domain of seed, if this increase, the search domain will be expand correspondingly. Our Suggestion: CRISPR-Cas: 10000，TA: 2000
 6. PermissiveClusteringThreshold: this adjust mmseqs cluster parameter(i.e. --min-seq-id) in **step 9**, this will affect sequence similarity. For more details, see:  [MMseqs2 User Guide](https://github.com/soedinglab/mmseqs2/wiki)
 7. SortingOverlapThreshold and SortingCoverageThresold: this twos parameters are used to filter **Low matching hit** produced by **PSIBLAST** in **step12**, increase them will result in the spurt of specificity.
+
+   - (1) SortingOverlapThreshold:
+
+     Overlap threshold; hits are subject to sorting between two profiles if they overlap by more than
+     the threshold value
+
+   - (2) SortingCoverageThresold:
+
+     Coverage threshold; hits are stored if they cover original profile by more than the
+     threshold value
 8. ThreadNum: thread number should be contingent on your **CPU core number**.
 
 Hint: the most convenient way of managing these relevant paths is create a new directory for processing your data or use existing one and include all your files in this directory.
@@ -282,7 +316,7 @@ do
 done < archaea_context.txt
 ```
 
-It may cost much more time than use wget, however it 
+It may cost much more time than use wget.
 
 
 
@@ -661,13 +695,13 @@ ref|WP_013825920.1|	ref|WP_156095866.1|	66	3	64	6.14e-07	STVTWINNDTKI-HRVVSDYG--
     
     - (2) SortingCoverageThresold:
     
-      Overlap threshold; hits are subject to sorting between two profiles if they overlap by more than
-      the threshold value
+      Coverage threshold; hits are stored if they cover original profile by more than the
+      threshold value
     
     
     
 
-This step will read the BLAST hits from the CLUSTERS folder and save the sorted results for each cluster in the CLUSTERS\_\${DefenseSystem_Name} /Sorted/ folder with a ‘.hits_sorted’ extension:
+This step will read the BLAST hits from the CLUSTERS folder and save the sorted results for each cluster in the CLUSTERS\_\${DefenseSystem_Name} /Sorted  folder with a ‘.hits_sorted’ extension:
 
 
 
@@ -804,7 +838,7 @@ Suppose a CLUSTER contains the number of g genes, these genes appear in the numb
 
 
 
-$$ a_1 + a_2 + a_3 + ... + a_n = g \$$
+$ a_1 + a_2 + a_3 + ... + a_n = g$
 
 
 $$ C = \frac{\frac{1}{a_1} +\frac{1}{a_2} + \frac{1}{a_3} + ... + \frac{1}{a_n} }{n}\ $$

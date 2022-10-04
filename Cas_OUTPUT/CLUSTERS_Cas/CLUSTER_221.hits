@@ -1,9 +1,0 @@
-# PSIBLAST 2.13.0+
-# Iteration: 1
-# Query: ref|WP_156096075.1| hypothetical protein [Methanobacterium sp. SMA-27]
-# Database: ./Cas_INPUT/Database/ProteinDB
-# Fields: query id, subject id, subject length, s. start, s. end, evalue, query seq, subject seq, q. start, q. end, score
-# 2 hits found
-ref|WP_156096075.1|	ref|WP_156096075.1|	45	1	45	1.25e-26	MRYDIEILGIIFILIVVALVSSFSSLNPDNLDALAFHFKIQWAIM	MRYDIEILGIIFILIVVALVSSFSSLNPDNLDALAFHFKIQWAIM	1	45	223
-ref|WP_156096075.1|	ref|WP_223790533.1|	62	1	39	1.34e-17	MRYDIEILGIIFILIVVALVSSFSSLNPDNLDALAFHFK	MRYDIEILGIIFILIVVALISSFSSLNPDNFDALAVSFQ	1	39	165
-# BLAST processed 1 queries
