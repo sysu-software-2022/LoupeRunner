@@ -24,7 +24,7 @@ cds_path = opts.c  # archaea_cds.pty
 seeds_name = opts.o   # Seeds_RM_A.tsv
 
 
-# O(n)构建哈希表
+# Construct Hash Table
 def create_hash_table(cds_find):
     hash_table = dict()
     for idx, row in enumerate(cds_find.itertuples()):

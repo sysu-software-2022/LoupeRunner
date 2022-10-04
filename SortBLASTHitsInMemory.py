@@ -23,15 +23,6 @@ MIN_COVERAGE_FILTER = float(opts.x)
 MIN_OVERLAP_FILTER = float(opts.z)
 
 
-# MIN_COVERAGE_FILTER = 0.25
-# MIN_OVERLAP_FILTER = 0.4
-# ClustersHitsFolder = '/mnt/d/lsd/Icity/CLUSTERS_DND_A/'
-# SortedHitsFolder =  '/mnt/d/lsd/Icity/CLUSTERS_DND_A/Sorted/'
-# PTYFileName = '/mnt/d/lsd/Icity/Database/archaea_cds.pty'
-# VicinityProteinIDsFileName = '/mnt/d/lsd/Icity/VicinityIDs_DND_A.lst'
-# SeedsFileName = '/mnt/d/lsd/Icity/Seeds_DND_A.tsv'
-# VicinityFileName = '/mnt/d/lsd/Icity/Vicinity_DND_A.tsv'
-
 HIT_Score = 1
 HIT_Cluster = 5
 HIT_ALIGNMENT_START = 2
