@@ -1,0 +1,8 @@
+# PSIBLAST 2.13.0+
+# Iteration: 1
+# Query: ref|WP_013826009.1| hypothetical protein [Methanobacterium paludis]
+# Database: ./Cas_INPUT/Database/ProteinDB
+# Fields: query id, subject id, subject length, s. start, s. end, evalue, query seq, subject seq, q. start, q. end, score
+# 1 hits found
+ref|WP_013826009.1|	ref|WP_013826009.1|	51	1	51	3.02e-34	MVDDGQWEEIHRLAKKSKQREKKKKRDKKIKESLEEFTKSFRWNFRFFGKP	MVDDGQWEEIHRLAKKSKQREKKKKRDKKIKESLEEFTKSFRWNFRFFGKP	1	51	274
+# BLAST processed 1 queries

@@ -1,0 +1,9 @@
+# PSIBLAST 2.13.0+
+# Iteration: 1
+# Query: ref|WP_192812703.1| hypothetical protein [Methanobacterium formicicum]
+# Database: ./Cas_INPUT/Database/ProteinDB
+# Fields: query id, subject id, subject length, s. start, s. end, evalue, query seq, subject seq, q. start, q. end, score
+# 2 hits found
+ref|WP_192812703.1|	ref|WP_192812703.1|	50	1	50	6.48e-31	MAKFYNIRDFLDDESVEKFINELIEENMEYLRTKYRQLVQTANKSRNRVL	MAKFYNIRDFLDDESVEKFINELIEENMEYLRTKYRQLVQTANKSRNRVL	1	50	252
+ref|WP_192812703.1|	ref|WP_209625683.1|	49	1	46	1.59e-22	MAKFYNIRDFLDDESVEKFINELIEENMEYLRTKYRQLVQTANKSR	MAKFYKIRDFLDDESVEKFINELIEENMEYIRAKYRQLLKAANNAK	1	46	197
+# BLAST processed 1 queries
