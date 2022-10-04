@@ -148,7 +148,7 @@ sudo apt install parallel
 brew install parallel
 ```
 
-
+You should install [Homebrew](https://brew.sh) first if you don't have one in your Mac.
 
 
 
