@@ -838,7 +838,7 @@ Suppose a CLUSTER contains the number of g genes, these genes appear in the numb
 
 
 
-$ a_1 + a_2 + a_3 + ... + a_n = g$
+$a_1 + a_2 + a_3 + ... + a_n = g$
 
 
 $$ C = \frac{\frac{1}{a_1} +\frac{1}{a_2} + \frac{1}{a_3} + ... + \frac{1}{a_n} }{n}\ $$
