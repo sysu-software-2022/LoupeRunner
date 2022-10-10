@@ -51,7 +51,7 @@ For details see [LoupeTool](https://github.com/sysu-software-2022/LoupeTool)
 
 You can click [Latest blast+](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/) and choose corresponding package (**suffix: tar.gz**) which is applicable to your OS (Linux/macOS)
 
-Or you can just use `wget` to install your package:
+Or you can just use `wget` to install your package:  (You may install it in your working directory)
 
 
 
@@ -112,7 +112,7 @@ export PATH=$(pwd)/:$PATH
 > macOS
 
 ```shell
-chmod + muscle5.1.macos_arm64 # or muscle5.1.macos_intel64
+chmod +x muscle5.1.macos_arm64 # or muscle5.1.macos_intel64
 mv muscle5.1.macos_arm64 muscle
 ln -s muscle /usr/local/bin
 
