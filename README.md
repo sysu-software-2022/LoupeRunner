@@ -97,14 +97,14 @@ source ~/.zshrc
 
 See [muscle Version 5.1](https://github.com/rcedgar/muscle/releases/tag/v5.1) for installation.
 
-Then type the following commands:
+Then type the following commands in the same directory where you installed **muscle**: (You may move it to your working directory)
 
 > Linux
 
 ```shell
 chmod +x muscle5.1.linux_intel64
 mv muscle5.1.linux_intel64 muscle
-ln -s muscle /etc/bin
+export PATH=$(pwd)/:$PATH
 ```
 
 
