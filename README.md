@@ -1,5 +1,5 @@
 <p  align="center">
-<img src="./public/loupe.jpg" alt="Loupe"  align="center" width="180" />
+<img src="https://gitlab.igem.org/2022/software-tools/sysu-software/-/raw/main/LoupeRunner/public/loupe.jpg" alt="Loupe"  align="center" width="180" />
 </p>
 
 <h1 align="center">
