@@ -471,6 +471,9 @@ WP_013825940.1	1553724..1554780	-	Methanobacterium paludis-GCF_000214725.1	NC_01
 
 
 ### **Step7: Collecting protein IDs**
+```bash
+grep -v "===" Vicinity_Cas.tsv | cut -f1 | sort -u > VicinityIDs_Cas.lst
+```
 
 - Input:  `Vicinity_Cas` (list of proteins in vicinity of seeds)
 
